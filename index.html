@@ -93,6 +93,9 @@ a[id^="faqtile"]{width:50%!important}
 @keyframes main_scroll{0%{transform-origin:left;transform:scaleX(0)}22%{transform-origin:left;transform:scaleX(1)}23%{transform-origin:right;transform:scaleX(1)}45%,to{transform-origin:right;transform:scaleX(0)}}
 </style>
 <style>
+.nav-link{position:relative}
+.nav-link::after{content:"";position:absolute;left:0;bottom:-3px;width:100%;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .4s cubic-bezier(.165,.84,.44,1)}
+.nav-link:hover::after{transform:scaleX(1);transform-origin:left}
 .hv1:hover{background:#fff !important;color:#000 !important}
 .hv2:hover{background:#000 !important;color:#fff !important}
 .hv3:hover{background:#000 !important;color:#fff !important}
@@ -134,9 +137,9 @@ a[id^="faqtile"]{width:50%!important}
     </a>
     <nav style="display:flex;align-items:center;height:100%;pointer-events:auto">
       <div class="mid-nav" style="display:flex;align-items:center;gap:20px;position:absolute;left:50%;top:0;bottom:0;transform:translateX(-50%)">
-        <a href="#" style="font-size:11px">Product</a>
-        <a href="#" style="font-size:11px">Our Story</a>
-        <a href="#" style="font-size:11px">How to use</a>
+        <a href="#" class="nav-link" style="font-size:11px">Product</a>
+        <a href="#" class="nav-link" style="font-size:11px">Our Story</a>
+        <a href="#" class="nav-link" style="font-size:11px">How to use</a>
       </div>
       <div style="position:relative">
         <button id="cta-btn" style="display:inline-flex;align-items:center;gap:10px;padding:8px 20px;background:transparent;color:#fff;border:1px solid currentColor;border-radius:100px;font-family:inherit;font-size:11px;letter-spacing:.05em;white-space:nowrap;cursor:pointer;transition:background-color 80ms,color 80ms" class="hv1">
@@ -197,9 +200,9 @@ a[id^="faqtile"]{width:50%!important}
       </a>
       <nav style="display:flex;align-items:center;height:100%">
         <div class="mid-nav" style="display:flex;align-items:center;gap:20px;position:absolute;left:50%;top:0;bottom:0;transform:translateX(-50%)">
-          <a href="#" style="font-size:11px">Product</a>
-          <a href="#" style="font-size:11px">Our Story</a>
-          <a href="#" style="font-size:11px">How to</a>
+          <a href="#" class="nav-link" style="font-size:11px">Product</a>
+          <a href="#" class="nav-link" style="font-size:11px">Our Story</a>
+          <a href="#" class="nav-link" style="font-size:11px">How to</a>
         </div>
         <a href="#" style="display:inline-flex;align-items:center;gap:10px;margin-right:6.25vw;padding:8px 20px;border:1px solid currentColor;border-radius:100px;font-size:11px;transition:background-color 80ms,color 80ms" class="hv4"><span>即將於 ( 嘖嘖 ) 登場</span><span>→</span></a>
       </nav>
