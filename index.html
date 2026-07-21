@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>8VRY — MoodKeys Portable Aroma Diffuser</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&amp;family=Homemade+Apple&amp;family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&amp;family=Manrope:wght@200..800&amp;family=Sora:wght@100..800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600&amp;family=Noto+Serif+TC:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+html{background:#fff;font-size:10px;scroll-behavior:smooth}
+body{margin:0;padding:0;color:#000;line-height:1;font-family:"Yu Mincho","YuMincho","游明朝","Hiragino Mincho ProN","Noto Serif JP","Noto Serif TC",serif;-webkit-font-smoothing:antialiased;font-feature-settings:"palt";letter-spacing:.05em}
+body ::selection{background-color:#bbb}
+a{text-decoration:none;color:inherit}
+a:hover{color:inherit}
+img,video{display:block}
+@keyframes loop_left{0%{transform:translateZ(0)}to{transform:translate3d(-100%,0,0)}}
+@keyframes loop_right{0%{transform:translate3d(-100%,0,0)}to{transform:translateZ(0)}}
+@keyframes badge_rotate{0%{transform:rotate(0)}18%,to{transform:rotate(360deg)}}
+#ugc-marquee:hover .ugc-track{animation-play-state:paused}
+.pcard{transition:color .6s}
+.pcard:hover{color:#fff}
+.pcard .pcard-bg{position:absolute;inset:0;z-index:-1;opacity:0;transition:opacity .6s}
+.pcard:hover .pcard-bg{opacity:1}
+@media (max-width:1024px){
+.story-row{min-width:0!important;width:87.5%!important;margin:0 auto!important}
+.pcard{width:50%!important}
+.pcard:nth-child(1),.pcard:nth-child(2){border-bottom:1px solid #000!important}
+.pcard:nth-child(2){border-right:none!important}
+.h2-big{font-size:32px!important}
+.ep-num{font-size:84px!important}
+}
+@media (max-width:680px){
+body{overflow-x:clip}
+.mid-nav,.hd-tag{display:none!important}
+#p-campaign p{font-size:14px!important}
+[data-screen-label="Philosophy"]{padding:120px 0 780px!important}
+.phi-row{flex-direction:column!important;gap:44px!important}
+.phi-row>p:first-child{font-size:28px!important}
+.phi-row>p:last-child{width:100%!important}
+[data-screen-label="Philosophy"]>div:nth-child(2)>div:nth-child(1){width:84%!important;bottom:340px!important}
+[data-screen-label="Philosophy"]>div:nth-child(2)>div:nth-child(2){width:130px!important;bottom:660px!important}
+[data-screen-label="Philosophy"]>div:nth-child(2)>div:nth-child(3),
+[data-screen-label="Philosophy"]>div:nth-child(2)>div:nth-child(4),
+[data-screen-label="Philosophy"]>div:nth-child(2)>div:nth-child(5){display:none!important}
+[data-screen-label="Brand Video"]{padding:100px 0 160px!important}
+.bv-row{gap:24px!important}
+.bv-row>p{height:260px!important;font-size:12px!important}
+.rec-wrap{height:840px!important}
+.rec-wrap>div:first-child{display:none!important}
+#rec0,#rec1{flex-direction:column!important}
+#rec0>div,#rec1>div{width:100%!important}
+#rec0>div:first-child,#rec1>div:first-child{height:42%!important;flex:none!important}
+#rec0>div:last-child,#rec1>div:last-child{flex:1 1 auto!important;align-items:flex-start!important;padding-top:36px!important}
+#rec0>div:last-child>div,#rec1>div:last-child>div{margin-left:6.25%!important;margin-right:6.25%!important}
+.rec-img{width:150px!important}
+.rec-bar{bottom:24px!important}
+.pcard{width:100%!important;border-right:none!important;border-bottom:1px solid #000!important;padding:50px 0!important}
+.pcard:last-child{border-bottom:none!important}
+[data-screen-label="Coming Soon"]{padding:120px 6.25%!important;gap:28px!important}
+[data-secret="1"]{font-size:20px!important}
+[data-secret="1"] br{display:none!important}
+[data-secret="2"]{font-size:12px!important;line-height:2!important}
+[data-screen-label="Our Story"]{padding:140px 0 460px!important}
+.story-row{flex-direction:column!important;gap:36px!important}
+.story-row>div{width:100%!important}
+.story-row>div>p:first-child{font-size:28px!important}
+.story-row>div>p:nth-child(2){margin-top:36px!important}
+[data-screen-label="Our Story"]>div:nth-child(2)>div:nth-child(1){width:45vw!important}
+[data-screen-label="Our Story"]>div:nth-child(2)>div:nth-child(2){display:none!important}
+[data-screen-label="Our Story"]>div:nth-child(2)>div:nth-child(3){width:45vw!important;bottom:120px!important}
+.ep-row{flex-direction:column!important;gap:30px!important}
+.ep-row>div{width:100%!important}
+.ep-row p:first-child{font-size:24px!important}
+.h2-big{font-size:26px!important}
+.ep-num{font-size:64px!important}
+.ep-txt{width:80%!important}
+[data-screen-label="Recommend"]{padding:100px 0 120px!important}
+.faq-tiles{flex-wrap:wrap!important}
+a[id^="faqtile"]{width:50%!important}
+#faqtile4{width:100%!important;aspect-ratio:1024/500!important}
+[data-screen-label="Mood Marquee"]{padding:80px 0 20px!important}
+[data-screen-label="Mood Marquee"] img{height:190px!important}
+[data-screen-label="Mood Marquee"] span{font-size:18px!important}
+.ft-main{flex-direction:column!important;gap:50px!important;padding:70px 0 60px!important}
+.ft-main nav{width:100%!important}
+.spec-row{flex-direction:column!important}
+.spec-row>div:first-child{width:100%!important}
+#spec-modal>div,#faq-modal>div,#gal-modal>div{padding:40px 24px 30px!important}
+}
+@keyframes main_scroll{0%{transform-origin:left;transform:scaleX(0)}22%{transform-origin:left;transform:scaleX(1)}23%{transform-origin:right;transform:scaleX(1)}45%,to{transform-origin:right;transform:scaleX(0)}}
+</style>
+<style>
+.hv1:hover{background:#fff !important;color:#000 !important}
+.hv2:hover{background:#000 !important;color:#fff !important}
+.hv3:hover{background:#000 !important;color:#fff !important}
+.hv4:hover{background:#000 !important;color:#fff !important}
+.hv5:hover{transform:scale(1.05) !important}
+.hv6:hover{background:#000 !important;color:#fff !important;transform:scale(1.15) rotate(360deg) !important}
+.hv7:hover{background:#fff !important;color:#000 !important}
+.hv8:hover{transform:scale(1.06) !important}
+.hv9:hover{background:#000 !important;color:#fff !important}
+.hv10:hover{transform:scale(1.06) !important}
+.hv11:hover{background:#000 !important;color:#fff !important}
+.hv12:hover{transform:scale(1.06) !important}
+.hv13:hover{transform:scale(1.06) !important}
+.hv14:hover{transform:scale(1.06) !important}
+.hv15:hover{transform:scale(1.06) !important}
+.hv16:hover{background:#000 !important;color:#fff !important}
+.hv17:hover{background:#000 !important;color:#fff !important}
+.hv18:hover{transform:scale(1.08) !important}
+.hv19:hover{transform:scale(1.08) !important}
+.hv20:hover{transform:scale(1.08) !important}
+.hv21:hover{transform:scale(1.08) !important}
+.hv22:hover{transform:scale(1.08) !important}
+</style>
+</head>
+<body>
+<div style="background:#fff">
+
+<!-- Preloader -->
+<div id="preloader" style="position:fixed;inset:0;z-index:400;display:flex;justify-content:center;align-items:center;background:#F0EFEA;transition:opacity .8s">
+  <img id="preloader-logo" src="assets/logo-black.svg" alt="8VRY" style="height:44px;width:auto;opacity:0;filter:blur(18px);transform:scale(1.08);transition:opacity 1.1s cubic-bezier(.215,.61,.355,1),filter 1.1s cubic-bezier(.215,.61,.355,1),transform 1.1s cubic-bezier(.215,.61,.355,1)">
+</div>
+
+<!-- ===== KV (fixed overlay) ===== -->
+<div id="kv-fixed" data-screen-label="KV" style="position:fixed;top:0;left:min(80px,6.25%);right:min(80px,6.25%);height:100svh;color:#fff;z-index:3;pointer-events:none">
+  <div style="position:absolute;top:40px;left:0;width:100%;display:flex;justify-content:space-between;align-items:center;height:60px">
+    <a href="#" style="display:flex;align-items:center;height:100%;pointer-events:auto">
+      <img src="assets/logo-white.svg" alt="Logo" style="height:26px;width:auto;display:block">
+      <span class="hd-tag" style="margin-left:23px;font-size:10px;line-height:1.2">MoodKeys<br>Portable Aroma Diffuser</span>
+    </a>
+    <nav style="display:flex;align-items:center;height:100%;pointer-events:auto">
+      <div class="mid-nav" style="display:flex;align-items:center;gap:20px;position:absolute;left:50%;top:0;bottom:0;transform:translateX(-50%)">
+        <a href="#" style="font-size:11px">Product</a>
+        <a href="#" style="font-size:11px">Our Story</a>
+        <a href="#" style="font-size:11px">How to use</a>
+      </div>
+      <div style="position:relative">
+        <button id="cta-btn" style="display:inline-flex;align-items:center;gap:10px;padding:8px 20px;background:transparent;color:#fff;border:1px solid currentColor;border-radius:100px;font-family:inherit;font-size:11px;letter-spacing:.05em;white-space:nowrap;cursor:pointer;transition:background-color 80ms,color 80ms" class="hv1">
+          <span>即將於 ( 嘖嘖 ) 登場</span>
+          <span id="cta-caret" style="display:inline-block;transition:transform .3s cubic-bezier(.165,.84,.44,1)">↓</span>
+        </button>
+        <div id="cta-panel" style="position:absolute;top:calc(100% + 10px);right:0;min-width:100%;background:#fff;color:#000;border:1px solid #000;border-radius:18px;overflow:hidden;opacity:0;transform:translateY(-8px);pointer-events:none;transition:opacity .3s,transform .3s cubic-bezier(.165,.84,.44,1);z-index:10">
+          <a href="#" style="display:flex;justify-content:space-between;align-items:center;gap:20px;padding:10px 20px;font-size:11px;white-space:nowrap;transition:background-color 80ms,color 80ms" class="hv2"><span>前往嘖嘖集資頁</span><span>→</span></a>
+          <a href="#" style="display:flex;justify-content:space-between;align-items:center;gap:20px;padding:10px 20px;border-top:1px solid #000;font-size:11px;white-space:nowrap;transition:background-color 80ms,color 80ms" class="hv3"><span>開賣時通知我</span><span>→</span></a>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div style="position:absolute;top:50%;transform:translateY(-50%);left:0;right:0;margin:auto;width:254px">
+    <div style="position:relative;height:0;padding-bottom:137.4%;overflow:hidden">
+      <video id="kv-video" src="https://relilla.com/cdn/shop/videos/c/vp/26dec9cba1b44dccab3a9440b0fc4f13/26dec9cba1b44dccab3a9440b0fc4f13.SD-480p-0.9Mbps-19873358.mp4?v=0" autoplay="autoplay" muted="muted" loop="loop" playsinline="playsinline" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover"></video>
+    </div>
+  </div>
+  <div style="position:absolute;bottom:140px;left:0">
+    <p style="margin:0;font-size:20px;line-height:1.15">You are what you repeated<br>day and night.</p>
+    <p style="margin:16px 0 0;font-size:12px;font-weight:500;letter-spacing:.1em;line-height:1.33">髪に、指先に、つづく日々に。</p>
+  </div>
+  <div style="display:flex;position:absolute;bottom:60px;left:0;gap:20px;pointer-events:auto">
+    <button id="kvnav0" style="display:flex;justify-content:center;align-items:center;width:21px;height:21px;border-radius:50%;border:1px solid currentColor;background:#fff;color:#000;font-size:11px;cursor:pointer;padding:0;font-family:inherit;transition:background-color .15s,color .15s">1</button>
+    <button id="kvnav1" style="display:flex;justify-content:center;align-items:center;width:21px;height:21px;border-radius:50%;border:1px solid currentColor;background:transparent;color:#fff;font-size:11px;cursor:pointer;padding:0;font-family:inherit;transition:background-color .15s,color .15s">2</button>
+    <button id="kvnav2" style="display:flex;justify-content:center;align-items:center;width:21px;height:21px;border-radius:50%;border:1px solid currentColor;background:transparent;color:#fff;font-size:11px;cursor:pointer;padding:0;font-family:inherit;transition:background-color .15s,color .15s">3</button>
+    <button id="kvnav3" style="display:flex;justify-content:center;align-items:center;width:21px;height:21px;border-radius:50%;border:1px solid currentColor;background:transparent;color:#fff;font-size:11px;cursor:pointer;padding:0;font-family:inherit;transition:background-color .15s,color .15s">4</button>
+  </div>
+  <a href="#p-campaign" style="position:absolute;bottom:67px;right:0;font-size:11px;pointer-events:auto"><span style="display:inline-block;position:relative;padding-bottom:3px">Scroll for Discover<span style="position:absolute;bottom:0;left:0;width:100%;height:1px;background:currentColor;transform:scaleX(0);animation:main_scroll 3.5s cubic-bezier(.215,.61,.355,1) 2.2s infinite"></span></span></a>
+</div>
+
+<!-- KV background slides (in flow) -->
+<div style="position:relative;height:max(100vh,131.875vw)">
+  <div id="kvbg0" style="position:absolute;top:0;left:0;width:100%;height:100%;opacity:1;transition:opacity 1.6s"><img src="assets/kv02.jpg" alt="" style="width:100%;height:100%;object-fit:cover"></div>
+  <div id="kvbg1" style="position:absolute;top:0;left:0;width:100%;height:100%;opacity:0;transition:opacity 1.6s"><img src="assets/kv01.jpg" alt="" style="width:100%;height:100%;object-fit:cover"></div>
+  <div id="kvbg2" style="position:absolute;top:0;left:0;width:100%;height:100%;opacity:0;transition:opacity 1.6s"><img src="assets/kv03.jpg" alt="" style="width:100%;height:100%;object-fit:cover"></div>
+  <div id="kvbg3" style="position:absolute;top:0;left:0;width:100%;height:100%;opacity:0;transition:opacity 1.6s"><img src="assets/kv04.jpg" alt="" style="width:100%;height:100%;object-fit:cover"></div>
+</div>
+
+<!-- ===== CAMPAIGN (sticky backdrop) ===== -->
+<section id="p-campaign" data-screen-label="Campaign" style="display:flex;align-items:center;position:sticky;top:0;height:100vh;z-index:3">
+  <div style="position:absolute;top:0;left:0;width:100%;height:100%"><img src="assets/campaign.jpg" alt="" style="width:100%;height:100%;object-fit:cover"></div>
+  <div style="display:flex;justify-content:space-between;align-items:center;position:relative;width:100%;padding:0 6.25%;color:#fff">
+    <p style="margin:0;font-size:20px">Price increase</p>
+    <p style="margin:0;font-size:12px;letter-spacing:.1em;line-height:1.5">7/31まで 全商品送料無料</p>
+  </div>
+</section>
+
+<!-- ===== CONTENTS ===== -->
+<div style="position:relative;background:#fff;z-index:5">
+
+  <!-- Sticky header -->
+  <header data-screen-label="Header" style="position:sticky;top:0;z-index:80">
+    <div style="display:flex;justify-content:space-between;position:relative;height:60px;background:#fff;border-bottom:1px solid #000">
+      <a href="#" style="display:flex;align-items:center;height:100%;margin-left:6.25%">
+        <img src="assets/logo-black.svg" alt="Logo" style="height:26px;width:auto;display:block">
+        <span class="hd-tag" style="margin-left:23px;font-size:10px;line-height:1.2">MoodKeys<br>Portable Aroma Diffuser</span>
+      </a>
+      <nav style="display:flex;align-items:center;height:100%">
+        <div class="mid-nav" style="display:flex;align-items:center;gap:20px;position:absolute;left:50%;top:0;bottom:0;transform:translateX(-50%)">
+          <a href="#" style="font-size:11px">Product</a>
+          <a href="#" style="font-size:11px">Our Story</a>
+          <a href="#" style="font-size:11px">How to</a>
+        </div>
+        <a href="#" style="display:inline-flex;align-items:center;gap:10px;margin-right:6.25vw;padding:8px 20px;border:1px solid currentColor;border-radius:100px;font-size:11px;transition:background-color 80ms,color 80ms" class="hv4"><span>即將於 ( 嘖嘖 ) 登場</span><span>→</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PHILOSOPHY -->
+  <section data-screen-label="Philosophy" style="position:relative;padding:200px 0 1370px;overflow:hidden">
+    <div style="width:87.5%;margin:auto;position:relative;z-index:2">
+      <h2 style="margin:0;font-size:12px;font-weight:400">( PHILOSOPHY )</h2>
+      <div class="phi-row" style="display:flex;justify-content:space-between;margin-top:60px">
+        <p style="margin:0;font-size:38px;line-height:1.16;text-wrap:pretty">The comfort stays<br>with you as long as<br>you touch the hair.</p>
+        <p style="margin:0;width:50%;font-size:14px;line-height:2.43">何もかもうまくいきそうな日も、<br>ちょっと落ち込むことがあった日も、<br>毎日使うものだから。<br><br>サロンでお客様と接している美容師が、<br>上質で高密度な成分にこだわり、<br>髪と頭皮と環境にやさしい<br>理想のヘアケアアイテムをつくりました。<br><br>日々のケアの積み重ねで、<br>いまと、これからの髪を健やかに。<br>そして滑らかな指通りや香りから、<br>心にも安らぎを届けます。<br><br>Re’lilla（リラ）は、ICIから皆さんへの贈り物。<br>あなたの髪に、指先に、つづく日々に、<br>心地よい時間が広がりますように。</p>
+      </div>
+    </div>
+    <div style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none">
+      <div style="position:absolute;bottom:634px;right:0;width:58.67%;max-width:751px"><img src="assets/philosophy_3.jpg" alt="" style="width:100%"></div>
+      <div style="position:absolute;bottom:1120px;left:10.23%;width:209px;z-index:1"><img src="assets/philosophy_2.jpg" alt="" style="width:100%"></div>
+      <div style="position:absolute;top:537px;left:6.25%;width:168px">
+        <img src="assets/philosophy_1.jpg" alt="" style="width:100%">
+        <div style="position:absolute;top:0;left:0;width:100%;transform:translateX(13.1%)"><img src="assets/philosophy_1.jpg" alt="" style="width:100%"></div>
+        <div style="position:absolute;top:0;left:0;width:100%;transform:translateX(26.2%)"><img src="assets/philosophy_1.jpg" alt="" style="width:100%"></div>
+        <div style="position:absolute;top:0;left:0;width:100%;transform:translateX(39.3%)"><img src="assets/philosophy_1.jpg" alt="" style="width:100%"></div>
+        <div style="position:absolute;top:0;left:0;width:100%;transform:translateX(52.4%)"><img src="assets/philosophy_1.jpg" alt="" style="width:100%"></div>
+      </div>
+      <div style="position:absolute;bottom:933px;left:0;width:156px">
+        <img src="assets/philosophy_4.jpg" alt="" style="width:100%">
+        <div style="position:absolute;top:0;left:0;width:100%;transform:translateX(10.3%)"><img src="assets/philosophy_4.jpg" alt="" style="width:100%"></div>
+        <div style="position:absolute;top:0;left:0;width:100%;transform:translateX(20.5%)"><img src="assets/philosophy_4.jpg" alt="" style="width:100%"></div>
+        <div style="position:absolute;top:0;left:0;width:100%;transform:translateX(30.8%)"><img src="assets/philosophy_4.jpg" alt="" style="width:100%"></div>
+        <div style="position:absolute;top:0;left:0;width:100%;transform:translateX(41%)"><img src="assets/philosophy_4.jpg" alt="" style="width:100%"></div>
+      </div>
+      <div style="position:absolute;bottom:430px;right:min(622px,48.59%);width:257px">
+        <img src="assets/rect200.jpg" alt="" style="width:100%">
+        <div style="position:absolute;top:0;left:0;width:100%;transform:translateY(6.5%)"><img src="assets/rect200.jpg" alt="" style="width:100%"></div>
+        <div style="position:absolute;top:0;left:0;width:100%;transform:translateY(13%)"><img src="assets/rect200.jpg" alt="" style="width:100%"></div>
+        <div style="position:absolute;top:0;left:0;width:100%;transform:translateY(19.5%)"><img src="assets/rect200.jpg" alt="" style="width:100%"></div>
+        <div style="position:absolute;top:0;left:0;width:100%;transform:translateY(26%)"><img src="assets/rect200.jpg" alt="" style="width:100%"></div>
+        <div style="position:absolute;top:0;left:0;width:100%;transform:translateY(32.5%)"><img src="assets/rect200.jpg" alt="" style="width:100%"></div>
+        <div style="position:absolute;top:0;left:0;width:100%;transform:translateY(39%)"><img src="assets/rect200.jpg" alt="" style="width:100%"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT -->
+  <section data-screen-label="Product">
+    <div data-screen-label="Brand Video" style="padding: 180px 0 200px; background: #fff; padding-bottom: 300px">
+      <div class="bv-row" style="display:flex;justify-content:center;align-items:flex-start;gap:70px">
+        <p style="margin:0;writing-mode:vertical-rl;font-size:15px;letter-spacing:.35em;line-height:2.6;height:340px">髪に、指先に、つづく日々に。</p>
+        <a href="#" id="video-thumb" style="display:block;position:relative;width:min(360px,60vw);cursor:pointer">
+          <div style="aspect-ratio:3/4;overflow:hidden">
+            <video src="https://relilla.com/cdn/shop/videos/c/vp/26dec9cba1b44dccab3a9440b0fc4f13/26dec9cba1b44dccab3a9440b0fc4f13.SD-480p-0.9Mbps-19873358.mp4?v=0" autoplay="autoplay" muted="muted" loop="loop" playsinline="playsinline" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .72s cubic-bezier(.165,.84,.44,1)" class="hv5"></video>
+          </div>
+          <span style="position:absolute;bottom:-14px;right:-14px;display:flex;justify-content:center;align-items:center;width:58px;height:58px;border:1px solid #000;border-radius:50%;background:#fff;font-size:10px;letter-spacing:.1em;transition:background-color .15s,color .15s,transform .45s cubic-bezier(.165,.84,.44,1)" class="hv6">Play</span>
+        </a>
+      </div>
+      <div style="margin-top:90px;text-align:center">
+        <p style="margin: 0; font-family: 'Homemade Apple',cursive; font-size: 14px; line-height: 1.6; letter-spacing: .02em">You are what you repeated<br>day and night.</p>
+        <p style="margin: 60px 0 0; font-family: 'Homemade Apple',cursive; font-size: 10px; opacity: .75">the daily ritual, for your hair and your hands.</p>
+      </div>
+    </div>
+    <div id="video-modal" style="position:fixed;inset:0;z-index:210;display:flex;justify-content:center;align-items:center;background:rgba(0,0,0,.72);opacity:0;pointer-events:none;transition:opacity .3s">
+      <div style="position:relative;width:min(420px,80vw)">
+        <button id="video-modal-close" style="position:absolute;top:-46px;right:0;width:34px;height:34px;border:1px solid #fff;border-radius:50%;background:transparent;color:#fff;font-family:inherit;font-size:14px;cursor:pointer;transition:background-color 80ms,color 80ms" class="hv7">×</button>
+        <video id="video-modal-player" src="https://relilla.com/cdn/shop/videos/c/vp/26dec9cba1b44dccab3a9440b0fc4f13/26dec9cba1b44dccab3a9440b0fc4f13.SD-480p-0.9Mbps-19873358.mp4?v=0" controls="controls" playsinline="playsinline" style="width:100%;display:block;aspect-ratio:3/4;object-fit:cover;background:#000"></video>
+      </div>
+    </div>
+    <div style="margin-bottom:80px;text-align:center">
+      <h2 class="h2-big" style="margin:0;font-size:40px;font-weight:400">( PRODUCT )</h2>
+    </div>
+    <div class="rec-wrap" style="position:relative;height:700px;border-top:1px solid #000">
+      <div style="position:absolute;top:0;left:0;right:0;margin:auto;width:1px;height:100%;background:#000;z-index:5"></div>
+      <div id="rec0" style="display:flex;position:absolute;top:0;left:0;width:100%;height:100%;background:#fff;opacity:1;transition:opacity 1.1s">
+        <div style="display:flex;justify-content:center;align-items:center;position:relative;width:50%;overflow:hidden">
+          <div style="position:absolute;top:0;left:0;width:100%;height:100%"><img src="assets/milkback.jpg" alt="" style="width:100%;height:100%;object-fit:cover"></div>
+          <div class="rec-img" style="position:relative;width:250px;overflow:hidden"><a href="#" style="display:block;transition:transform .72s cubic-bezier(.165,.84,.44,1)" class="hv8"><img src="assets/product_1.jpg" alt="Milk Oil" style="width:100%"></a></div>
+        </div>
+        <div style="display:flex;align-items:center;width:50%">
+          <div style="max-width:450px;margin-left:12.5%;margin-right:9.375%">
+            <p style="margin:0;font-size:30px;line-height:1.2">Milk Oil</p>
+            <p style="margin:22px 0 0;font-size:15px;line-height:1.6">ミルクオイル</p>
+            <p style="margin:13px 0 0;font-size:12px;line-height:2">〈パチュリの香り〉<br>髪の内側にも外側にも浸透し、本来あるべき健康な髪へ。しなやかな手触りとツヤ感を実現させる、洗い流さないヘアミルク。</p>
+            <a href="#" data-spec-btn="1" style="display:inline-flex;align-items:center;gap:10px;margin-top:40px;padding:8px 20px;border:1px solid currentColor;border-radius:100px;font-size:11px;transition:background-color 80ms,color 80ms" class="hv9"><span>Product Spec</span><span>→</span></a>
+            
+          </div>
+        </div>
+        </div>
+      <div id="rec1" style="display:flex;position:absolute;top:0;left:0;width:100%;height:100%;background:#fff;opacity:0;pointer-events:none;transition:opacity 1.1s">
+        <div style="display:flex;justify-content:center;align-items:center;position:relative;width:50%;overflow:hidden">
+          <div style="position:absolute;top:0;left:0;width:100%;height:100%"><img src="assets/aicon_bg.jpg" alt="" style="width:100%;height:100%;object-fit:cover"></div>
+          <div class="rec-img" style="position:relative;width:250px;overflow:hidden"><a href="#" style="display:block;transition:transform .72s cubic-bezier(.165,.84,.44,1)" class="hv10"><img src="assets/aicon_4.jpg" alt="Milk Oil × AICON" style="width:100%"></a></div>
+        </div>
+        <div style="display:flex;align-items:center;width:50%">
+          <div style="max-width:450px;margin-left:12.5%;margin-right:9.375%">
+            <p style="margin:0;font-size:30px;line-height:1.2">Milk Oil × AICON</p>
+            <p style="margin:22px 0 0;font-size:15px;line-height:1.6">限定パッケージ/ミルクオイル</p>
+            <p style="margin:13px 0 0;font-size:12px;line-height:2">〈シトラス・インセンスの香り〉<br>アーティストとのコラボシリーズ第3弾は、シンプルな線で独特の世界観を表現するペインター・AICONさんに、ミルクオイルのパッケージと香りをプロデュースしていただきました。</p>
+            <a href="#" data-spec-btn="1" style="display:inline-flex;align-items:center;gap:10px;margin-top:40px;padding:8px 20px;border:1px solid currentColor;border-radius:100px;font-size:11px;transition:background-color 80ms,color 80ms" class="hv11"><span>Product Spec</span><span>→</span></a>
+            
+          </div>
+        </div>
+        </div>
+      <div class="rec-bar" style="display:flex;justify-content:space-between;align-items:center;position:absolute;bottom:60px;left:0;right:0;padding-left:6.25%;padding-right:4.6875%;z-index:5">
+        <div style="display:flex;gap:20px">
+          <button id="recnav0" style="display:flex;justify-content:center;align-items:center;width:21px;height:21px;border-radius:50%;border:1px solid currentColor;background:#000;color:#fff;font-size:11px;cursor:pointer;padding:0;font-family:inherit;transition:background-color .15s,color .15s">1</button>
+          <button id="recnav1" style="display:flex;justify-content:center;align-items:center;width:21px;height:21px;border-radius:50%;border:1px solid currentColor;background:#fff;color:#000;font-size:11px;cursor:pointer;padding:0;font-family:inherit;transition:background-color .15s,color .15s">2</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product grid -->
+    <div style="display:flex;flex-wrap:wrap;position:relative;border-top:1px solid #000;border-bottom:1px solid #000;z-index:20">
+      <div class="pcard" style="position:relative;width:25%;box-sizing:border-box;padding:70px 0;border-right:1px solid #000"><div class="pcard-bg"><img src="assets/campaign.jpg" alt="" style="width:100%;height:100%;object-fit:cover"></div>
+        <p style="margin:0;text-align:center;font-size:18px;line-height:1.33">Flow Boost</p>
+        <p style="margin:8px 0 0;text-align:center;font-size:14px">no.1</p>
+        <div style="width:58.5%;margin:30px auto 0;aspect-ratio:500/672;overflow:hidden"><a href="#" data-gallery="assets/product_5_kikii.jpg,assets/product_7_kikii.jpg,assets/product_15_kikii.jpg" data-gallery-title="Flow Boost no.1" style="display:block;height:100%"><img src="assets/product_5_kikii.jpg" alt="Shampoo kikii" style="width:100%;height:100%;object-fit:cover;transition:transform .72s cubic-bezier(.165,.84,.44,1)" class="hv12"></a></div>
+        <p style="margin: 27px auto 0; width: 58.5%; text-align: center; font-size: 11px; line-height: 1.8">啟動感官的清新柑橘調，讓思緒流動起來。</p>
+        <div style="width:58.5%;margin:16px auto 0;border-top:1px solid color-mix(in srgb,currentColor 25%,transparent)"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:8px 0;border-bottom:1px solid color-mix(in srgb,currentColor 25%,transparent)"><span style="font-size:10px;opacity:.5;letter-spacing:.2em">前調</span><span style="font-size:11px">葡萄柚・佛手柑</span></div><div style="display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:8px 0;border-bottom:1px solid color-mix(in srgb,currentColor 25%,transparent)"><span style="font-size:10px;opacity:.5;letter-spacing:.2em">中調</span><span style="font-size:11px">綠葉・迷迭香</span></div><div style="display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:8px 0;border-bottom:1px solid color-mix(in srgb,currentColor 25%,transparent)"><span style="font-size:10px;opacity:.5;letter-spacing:.2em">後調</span><span style="font-size:11px">白麝香・雪松</span></div></div>
+        
+      </div>
+      <div class="pcard" style="position:relative;width:25%;box-sizing:border-box;padding:70px 0;border-right:1px solid #000"><div class="pcard-bg"><img src="assets/campaign.jpg" alt="" style="width:100%;height:100%;object-fit:cover"></div>
+        <p style="margin:0;text-align:center;font-size:18px;line-height:1.33">Ground Calm</p>
+        <p style="margin:8px 0 0;text-align:center;font-size:14px">no.2</p>
+        <div style="width:58.5%;margin:30px auto 0;aspect-ratio:500/672;overflow:hidden"><a href="#" data-gallery="assets/product_17_kikii.jpg,assets/product_16_emuu.jpg,assets/product_19_emuu.jpg" data-gallery-title="Ground Calm no.2" style="display:block;height:100%"><img src="assets/product_17_kikii.jpg" alt="Treatment kikii" style="width:100%;height:100%;object-fit:cover;transition:transform .72s cubic-bezier(.165,.84,.44,1)" class="hv13"></a></div>
+        <p style="margin: 27px auto 0; width: 58.5%; text-align: center; font-size: 11px; line-height: 1.8">沉穩的大地木質調，把心安放回地面。</p>
+        <div style="width:58.5%;margin:16px auto 0;border-top:1px solid color-mix(in srgb,currentColor 25%,transparent)"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:8px 0;border-bottom:1px solid color-mix(in srgb,currentColor 25%,transparent)"><span style="font-size:10px;opacity:.5;letter-spacing:.2em">前調</span><span style="font-size:11px">鼠尾草・小豆蔻</span></div><div style="display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:8px 0;border-bottom:1px solid color-mix(in srgb,currentColor 25%,transparent)"><span style="font-size:10px;opacity:.5;letter-spacing:.2em">中調</span><span style="font-size:11px">雪松・岩蘭草</span></div><div style="display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:8px 0;border-bottom:1px solid color-mix(in srgb,currentColor 25%,transparent)"><span style="font-size:10px;opacity:.5;letter-spacing:.2em">後調</span><span style="font-size:11px">琥珀・廣藿香</span></div></div>
+        
+      </div>
+      <div class="pcard" style="position:relative;width:25%;box-sizing:border-box;padding:70px 0;border-right:1px solid #000"><div class="pcard-bg"><img src="assets/campaign.jpg" alt="" style="width:100%;height:100%;object-fit:cover"></div>
+        <p style="margin:0;text-align:center;font-size:18px;line-height:1.33">Think Reset</p>
+        <p style="margin:8px 0 0;text-align:center;font-size:14px">no.3</p>
+        <div style="width:58.5%;margin:30px auto 0;aspect-ratio:500/672;overflow:hidden"><a href="#" data-gallery="assets/product_8_moist.jpg,assets/product_9_silky.jpg,assets/product_3.jpg" data-gallery-title="Think Reset no.3" style="display:block;height:100%"><img src="assets/product_8_moist.jpg" alt="Charme moist" style="width:100%;height:100%;object-fit:cover;transition:transform .72s cubic-bezier(.165,.84,.44,1)" class="hv14"></a></div>
+        <p style="margin: 27px auto 0; width: 58.5%; text-align: center; font-size: 11px; line-height: 1.8">通透的草本涼感，替腦袋按下重新整理。</p>
+        <div style="width:58.5%;margin:16px auto 0;border-top:1px solid color-mix(in srgb,currentColor 25%,transparent)"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:8px 0;border-bottom:1px solid color-mix(in srgb,currentColor 25%,transparent)"><span style="font-size:10px;opacity:.5;letter-spacing:.2em">前調</span><span style="font-size:11px">薄荷葉・尤加利</span></div><div style="display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:8px 0;border-bottom:1px solid color-mix(in srgb,currentColor 25%,transparent)"><span style="font-size:10px;opacity:.5;letter-spacing:.2em">中調</span><span style="font-size:11px">茶樹・薰衣草</span></div><div style="display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:8px 0;border-bottom:1px solid color-mix(in srgb,currentColor 25%,transparent)"><span style="font-size:10px;opacity:.5;letter-spacing:.2em">後調</span><span style="font-size:11px">白木・微涼麝香</span></div></div>
+        
+      </div>
+      <div class="pcard" style="position:relative;width:25%;padding:70px 0"><div class="pcard-bg"><img src="assets/campaign.jpg" alt="" style="width:100%;height:100%;object-fit:cover"></div>
+        <p style="margin:0;text-align:center;font-size:18px;line-height:1.33">Heart Balance</p>
+        <p style="margin:8px 0 0;text-align:center;font-size:14px">no.4</p>
+        <div style="width:58.5%;margin:30px auto 0;aspect-ratio:500/672;overflow:hidden"><a href="#" data-gallery="assets/product_11.jpg,assets/product_22.jpg,assets/product_25.jpg" data-gallery-title="Heart Balance no.4" style="display:block;height:100%"><img src="assets/product_11.jpg" alt="Natural Oil" style="width:100%;height:100%;object-fit:cover;transition:transform .72s cubic-bezier(.165,.84,.44,1)" class="hv15"></a></div>
+        <p style="margin: 27px auto 0; width: 58.5%; text-align: center; font-size: 11px; line-height: 1.8">溫柔的花香調，接住每一種心情。</p>
+        <div style="width:58.5%;margin:16px auto 0;border-top:1px solid color-mix(in srgb,currentColor 25%,transparent)"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:8px 0;border-bottom:1px solid color-mix(in srgb,currentColor 25%,transparent)"><span style="font-size:10px;opacity:.5;letter-spacing:.2em">前調</span><span style="font-size:11px">梨・粉紅胡椒</span></div><div style="display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:8px 0;border-bottom:1px solid color-mix(in srgb,currentColor 25%,transparent)"><span style="font-size:10px;opacity:.5;letter-spacing:.2em">中調</span><span style="font-size:11px">玫瑰・小蒼蘭</span></div><div style="display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:8px 0;border-bottom:1px solid color-mix(in srgb,currentColor 25%,transparent)"><span style="font-size:10px;opacity:.5;letter-spacing:.2em">後調</span><span style="font-size:11px">檀香・柔霧琥珀</span></div></div>
+        
+      </div>
+      
+    </div>
+
+    <!-- More Products marquee -->
+    <div data-screen-label="Coming Soon" style="display:flex;flex-direction:column;justify-content:center;align-items:center;gap:44px;padding:260px 6.25%;text-align:center">
+      <p data-secret="1" style="margin:0;font-size:34px;line-height:1.5;text-wrap:pretty">Four moods are only the beginning.<br>(More scents), (brand collaborations), and a (membership subscription) are on the way.</p>
+      <p data-secret="2" style="margin:0;font-size:15px;letter-spacing:.08em">未來將推出更多 (香調)、(品牌聯名)，以及 (會員訂閱制度)。</p>
+    </div>
+  </section>
+
+  <!-- OUR STORY -->
+  <section data-screen-label="Our Story" style="position:relative;padding:250px 0 689px;overflow:hidden">
+    <div style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none">
+      <div style="position:absolute;top:0;left:0;width:calc(100% - 245px);height:100%"><img src="assets/story_bg_sub.jpg" alt="" style="width:100%;height:100%;object-fit:cover;object-position:left"></div>
+      <div style="position:absolute;top:0;left:35px;width:calc(100% - 245px);height:100%"><img src="assets/story_bg_sub.jpg" alt="" style="width:100%;height:100%;object-fit:cover;object-position:left"></div>
+      <div style="position:absolute;top:0;left:70px;width:calc(100% - 245px);height:100%"><img src="assets/story_bg_sub.jpg" alt="" style="width:100%;height:100%;object-fit:cover;object-position:left"></div>
+      <div style="position:absolute;top:0;left:105px;width:calc(100% - 245px);height:100%"><img src="assets/story_bg_sub.jpg" alt="" style="width:100%;height:100%;object-fit:cover;object-position:left"></div>
+      <div style="position:absolute;top:0;left:140px;width:calc(100% - 245px);height:100%"><img src="assets/story_bg_sub.jpg" alt="" style="width:100%;height:100%;object-fit:cover;object-position:left"></div>
+      <div style="position:absolute;top:0;left:175px;width:calc(100% - 245px);height:100%"><img src="assets/story_bg_sub.jpg" alt="" style="width:100%;height:100%;object-fit:cover;object-position:left"></div>
+      <div style="position:absolute;top:0;left:210px;width:calc(100% - 245px);height:100%"><img src="assets/story_bg_sub.jpg" alt="" style="width:100%;height:100%;object-fit:cover;object-position:left"></div>
+      <div style="position:absolute;top:0;right:0;width:calc(100% - 245px);height:100%"><img src="assets/story_bg_main.jpg" alt="" style="width:100%;height:100%;object-fit:cover"></div>
+    </div>
+    <div style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none">
+      <div style="position:absolute;top:464px;left:6.25%;width:257px">
+        <img src="assets/story_1.jpg" alt="" style="width:100%">
+        <div style="position:absolute;top:0;left:0;width:100%;transform:translateY(4.1%)"><img src="assets/story_1.jpg" alt="" style="width:100%"></div>
+        <div style="position:absolute;top:0;left:0;width:100%;transform:translateY(8.2%)"><img src="assets/story_1.jpg" alt="" style="width:100%"></div>
+        <div style="position:absolute;top:0;left:0;width:100%;transform:translateY(12.3%)"><img src="assets/story_1.jpg" alt="" style="width:100%"></div>
+        <div style="position:absolute;top:0;left:0;width:100%;transform:translateY(16.4%)"><img src="assets/story_1.jpg" alt="" style="width:100%"></div>
+        <div style="position:absolute;top:0;left:0;width:100%;transform:translateY(20.5%)"><img src="assets/story_1.jpg" alt="" style="width:100%"></div>
+        <div style="position:absolute;top:0;left:0;width:100%;transform:translateY(24.6%)"><img src="assets/story_1.jpg" alt="" style="width:100%"></div>
+      </div>
+      <div style="position:absolute;bottom:636px;left:16.02%;width:287px">
+        <img src="assets/story_2.jpg" alt="" style="width:100%">
+        <div style="position:absolute;top:0;left:0;width:100%;transform:translate(5.9%,9.4%)"><img src="assets/story_2.jpg" alt="" style="width:100%"></div>
+        <div style="position:absolute;top:0;left:0;width:100%;transform:translate(11.8%,18.8%)"><img src="assets/story_2.jpg" alt="" style="width:100%"></div>
+        <div style="position:absolute;top:0;left:0;width:100%;transform:translate(17.8%,28.2%)"><img src="assets/story_2.jpg" alt="" style="width:100%"></div>
+        <div style="position:absolute;top:0;left:0;width:100%;transform:translate(23.7%,37.6%)"><img src="assets/story_2.jpg" alt="" style="width:100%"></div>
+      </div>
+      <div style="position:absolute;bottom:250px;right:6.25%;width:288px">
+        <img src="assets/story_3.jpg" alt="" style="width:100%">
+        <div style="position:absolute;top:0;left:0;width:100%;transform:translateX(-6.9%)"><img src="assets/story_3.jpg" alt="" style="width:100%"></div>
+        <div style="position:absolute;top:0;left:0;width:100%;transform:translateX(-13.9%)"><img src="assets/story_3.jpg" alt="" style="width:100%"></div>
+        <div style="position:absolute;top:0;left:0;width:100%;transform:translateX(-20.8%)"><img src="assets/story_3.jpg" alt="" style="width:100%"></div>
+        <div style="position:absolute;top:0;left:0;width:100%;transform:translateX(-27.8%)"><img src="assets/story_3.jpg" alt="" style="width:100%"></div>
+      </div>
+    </div>
+    <div class="story-row" style="display:flex;justify-content:space-between;align-items:flex-start;position:relative;color:#fff;width:65.16%;min-width:750px;margin-left:auto;margin-right:6.25%">
+      <h2 style="margin:0;font-size:12px;font-weight:400">( OUR STORY )</h2>
+      <div style="width:65.35%">
+        <p style="margin:0;font-size:46px;line-height:1.3">You are what you repeated<br>day and night.</p>
+        <p style="margin:82px 0 0;font-size:14px;line-height:2.43">大切なのは、内側から補修すること。<br>余分なものを洗い流し、<br>栄養分を補って定着させる。<br><br>毎日のヘアケアで、同じ成分を蓄積し、<br>いまとこれからの髪を健やかに。</p>
+        <div style="max-width:450px;aspect-ratio:450/454;margin-top:120px"><img src="assets/illust_routine.svg" alt="routine" style="width:100%;height:100%"></div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- EPISODE -->
+  <section data-screen-label="Episode" style="position:relative;padding-top:300px;background:#fff;z-index:15">
+    <div class="ep-row" style="display:flex;justify-content:space-between;align-items:flex-start;width:87.5%;margin:auto">
+      <h2 class="h2-big" style="margin:0;font-size:40px;font-weight:400">( EPISODE )<span style="margin-left:9px;font-size:.3em">05</span></h2>
+      <div style="width:48.66%">
+        <p style="margin:0;font-size:34px;line-height:1.18">There shows<br>behind the scene.</p>
+        <p style="margin:28px 0 0;font-size:12px;line-height:2">リラのことをもっと知ってほしいから。<br>アイテムの開発エピソードや、<br>お悩みに合わせたヘアケアのポイントを紹介します。</p>
+      </div>
+    </div>
+    <div style="margin-top:26px;margin-bottom:-620px">
+      <div style="position:sticky;top:0;height:calc(100vh + 700px);padding-top:70px;pointer-events:none">
+        <div id="ep0" style="position:relative;height:calc(100% - 700px);color:#fff;pointer-events:auto;overflow:hidden">
+          <div style="height:100%"><img src="assets/episode_menu.jpg" alt="" style="width:100%;height:100%;object-fit:cover"></div>
+          <div id="epvert0" style="display:flex;align-items:center;position:absolute;top:40px;left:6.25%;transition:opacity .55s">
+            <span style="writing-mode:vertical-rl;font-size:10px">Episode Number</span>
+            <span class="ep-num" style="margin-left:11px;font-size:110px">06</span>
+          </div>
+          <div id="eplabel0" style="display:flex;align-items:center;gap:12px;position:absolute;top:0;left:6.25%;height:70px;opacity:0;transition:opacity .55s">
+            <span style="font-size:10px">Episode Number</span>
+            <span style="font-size:24px">06</span>
+          </div>
+          <div class="ep-txt" style="position:absolute;bottom:min(60px,6vh);left:6.25%;width:400px">
+            <p style="margin:0;font-size:15px;line-height:1.67">季節のヘアケア(emuuと過ごす春)</p>
+            <p style="margin:18px 0 0;font-size:12px;line-height:2.08">髪のパサつきが気になるこの時期の人気アイテムや、ICIの美容師が実践しているヘアケアのポイントをご紹介します。</p>
+            
+          </div>
+        </div>
+      </div>
+      <div style="position:sticky;top:70px;height:calc(100vh + 620px);padding-top:70px;pointer-events:none">
+        <div id="ep1" style="position:relative;height:calc(100% - 700px);color:#fff;pointer-events:auto;overflow:hidden">
+          <div style="height:100%"><img src="assets/episode_5.jpg" alt="" style="width:100%;height:100%;object-fit:cover"></div>
+          <div id="epvert1" style="display:flex;align-items:center;position:absolute;top:40px;left:6.25%;transition:opacity .55s">
+            <span style="writing-mode:vertical-rl;font-size:10px">Episode Number</span>
+            <span class="ep-num" style="margin-left:11px;font-size:110px">05</span>
+          </div>
+          <div id="eplabel1" style="display:flex;align-items:center;gap:12px;position:absolute;top:0;left:6.25%;height:70px;opacity:0;transition:opacity .55s">
+            <span style="font-size:10px">Episode Number</span>
+            <span style="font-size:24px">05</span>
+          </div>
+          <div class="ep-txt" style="position:absolute;bottom:min(60px,6vh);left:6.25%;width:400px">
+            <p style="margin:0;font-size:15px;line-height:1.67">「気持ちよく生き返るために眠る」<br>ペインター・AICONインタビュー</p>
+            <p style="margin:18px 0 0;font-size:12px;line-height:2.08">リラの中でも人気の高い「ミルクオイル」を題材に、ペインター・AICONにプロデュースを依頼。彼女がパッケージや香りに込めた想いとは。</p>
+            
+          </div>
+        </div>
+      </div>
+      <div style="position:sticky;top:140px;height:calc(100vh + 540px);padding-top:70px;pointer-events:none">
+        <div id="ep2" style="position:relative;height:calc(100% - 700px);color:#fff;pointer-events:auto;overflow:hidden">
+          <div style="height:100%"><img src="assets/episode_4.jpg" alt="" style="width:100%;height:100%;object-fit:cover"></div>
+          <div id="epvert2" style="display:flex;align-items:center;position:absolute;top:40px;left:6.25%;transition:opacity .55s">
+            <span style="writing-mode:vertical-rl;font-size:10px">Episode Number</span>
+            <span class="ep-num" style="margin-left:11px;font-size:110px">04</span>
+          </div>
+          <div id="eplabel2" style="display:flex;align-items:center;gap:12px;position:absolute;top:0;left:6.25%;height:70px;opacity:0;transition:opacity .55s">
+            <span style="font-size:10px">Episode Number</span>
+            <span style="font-size:24px">04</span>
+          </div>
+          <div class="ep-txt" style="position:absolute;bottom:min(60px,6vh);left:6.25%;width:400px">
+            <p style="margin:0;font-size:15px;line-height:1.67">Re’lilla USER VOICE #1</p>
+            <p style="margin:18px 0 0;font-size:12px;line-height:2.08">実際にリラをご愛用いただいているユーザーさんの中から、今回は3組のボイスをご紹介します。</p>
+            
+          </div>
+        </div>
+      </div>
+      <div style="position:sticky;top:210px;height:calc(100vh + 460px);padding-top:70px;pointer-events:none">
+        <div id="ep3" style="position:relative;height:calc(100% - 700px);color:#fff;pointer-events:auto;overflow:hidden">
+          <div style="height:100%"><img src="assets/episode_3.jpg" alt="" style="width:100%;height:100%;object-fit:cover"></div>
+          <div id="epvert3" style="display:flex;align-items:center;position:absolute;top:40px;left:6.25%;transition:opacity .55s">
+            <span style="writing-mode:vertical-rl;font-size:10px">Episode Number</span>
+            <span class="ep-num" style="margin-left:11px;font-size:110px">03</span>
+          </div>
+          <div id="eplabel3" style="display:flex;align-items:center;gap:12px;position:absolute;top:0;left:6.25%;height:70px;opacity:0;transition:opacity .55s">
+            <span style="font-size:10px">Episode Number</span>
+            <span style="font-size:24px">03</span>
+          </div>
+          <div class="ep-txt" style="position:absolute;bottom:min(60px,6vh);left:6.25%;width:400px">
+            <p style="margin:0;font-size:15px;line-height:1.67">心地よさが長続きする、リラの香り</p>
+            <p style="margin:18px 0 0;font-size:12px;line-height:2.08">もやもやしていた心が落ち着いたり、考えをクリアにして前向きにさせたり、「香り」にはさまざまな効果があります。</p>
+            
+          </div>
+        </div>
+      </div>
+      <div style="position:sticky;top:280px;height:calc(100vh + 380px);padding-top:70px;pointer-events:none">
+        <div id="ep4" style="position:relative;height:calc(100% - 620px);color:#fff;pointer-events:auto;overflow:hidden">
+          <div style="height:100%"><img src="assets/rect58.jpg" alt="" style="width:100%;height:100%;object-fit:cover"></div>
+          <div style="display:flex;align-items:center;position:absolute;top:40px;left:6.25%">
+            <span style="writing-mode:vertical-rl;font-size:10px">Episode Number</span>
+            <span class="ep-num" style="margin-left:11px;font-size:110px">02</span>
+          </div>
+          <div id="eplabel4" style="display:flex;align-items:center;gap:12px;position:absolute;top:0;left:6.25%;height:70px;opacity:0;transition:opacity .55s">
+            <span style="font-size:10px">Episode Number</span>
+            <span style="font-size:24px">02</span>
+          </div>
+          <div class="ep-txt" style="position:absolute;bottom:min(60px,6vh);left:6.25%;width:400px">
+            <p style="margin:0;font-size:15px;line-height:1.67">「内側からの補修」にこだわる理由</p>
+            <p style="margin:18px 0 0;font-size:12px;line-height:2.08">お肌をケアするように、余分なものを洗い流して、栄養分を補って定着させる。そんな日々の積み重ねを、ぜひヘアケアにも。</p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- More Episode marquee -->
+  <section data-screen-label="Recommend" style="position:relative;z-index:16;background:#fff;padding:160px 0 180px">
+    <div style="margin-bottom:80px;text-align:center">
+      <h2 class="h2-big" style="margin:0;font-size:40px;font-weight:400">( RECOMMEND )</h2>
+      <p style="margin:24px 0 0;font-size:12px;line-height:2;letter-spacing:.1em">網紅推薦｜大家都在用</p>
+    </div>
+    <div id="ugc-marquee" style="overflow:hidden;border-top:1px solid #000;border-bottom:1px solid #000;padding:60px 0">
+      <div style="display:flex;white-space:nowrap">
+        <div class="ugc-track" style="display:flex;animation:loop_left 60s linear infinite">
+          <div style="display:flex;flex-direction:column;gap:14px;width:264px;margin-left:40px">
+            <div style="aspect-ratio:9/16;border:1px solid #000;background:repeating-linear-gradient(45deg,#f4f2ee 0 10px,#fff 10px 20px);display:flex;justify-content:center;align-items:center"><span style="font:10px/1.8 ui-monospace,Menlo,monospace;letter-spacing:.1em;text-align:center">UGC VIDEO 01<br>網紅短片 9:16</span></div>
+            <p style="margin:0;font-size:12px">@creator_01</p>
+            <p style="margin:0;font-size:11px;line-height:1.7;opacity:.6;white-space:normal">「洗完頭髮真的順到不行，回購第三次。」</p>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:14px;width:264px;margin-left:40px">
+            <div style="aspect-ratio:9/16;border:1px solid #000;background:repeating-linear-gradient(45deg,#f4f2ee 0 10px,#fff 10px 20px);display:flex;justify-content:center;align-items:center"><span style="font:10px/1.8 ui-monospace,Menlo,monospace;letter-spacing:.1em;text-align:center">UGC VIDEO 02<br>網紅短片 9:16</span></div>
+            <p style="margin:0;font-size:12px">@creator_02</p>
+            <p style="margin:0;font-size:11px;line-height:1.7;opacity:.6;white-space:normal">「香味超級療癒，睡前保養必備。」</p>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:14px;width:264px;margin-left:40px">
+            <div style="aspect-ratio:9/16;border:1px solid #000;background:repeating-linear-gradient(45deg,#f4f2ee 0 10px,#fff 10px 20px);display:flex;justify-content:center;align-items:center"><span style="font:10px/1.8 ui-monospace,Menlo,monospace;letter-spacing:.1em;text-align:center">UGC VIDEO 03<br>網紅短片 9:16</span></div>
+            <p style="margin:0;font-size:12px">@creator_03</p>
+            <p style="margin:0;font-size:11px;line-height:1.7;opacity:.6;white-space:normal">「染燙後的救星，毛躁感消失了。」</p>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:14px;width:264px;margin-left:40px">
+            <div style="aspect-ratio:9/16;border:1px solid #000;background:repeating-linear-gradient(45deg,#f4f2ee 0 10px,#fff 10px 20px);display:flex;justify-content:center;align-items:center"><span style="font:10px/1.8 ui-monospace,Menlo,monospace;letter-spacing:.1em;text-align:center">UGC VIDEO 04<br>網紅短片 9:16</span></div>
+            <p style="margin:0;font-size:12px">@creator_04</p>
+            <p style="margin:0;font-size:11px;line-height:1.7;opacity:.6;white-space:normal">「設計師朋友也在用，質感沒話說。」</p>
+          </div>
+        </div>
+        <div class="ugc-track" style="display:flex;animation:loop_left 60s linear infinite">
+          <div style="display:flex;flex-direction:column;gap:14px;width:264px;margin-left:40px">
+            <div style="aspect-ratio:9/16;border:1px solid #000;background:repeating-linear-gradient(45deg,#f4f2ee 0 10px,#fff 10px 20px);display:flex;justify-content:center;align-items:center"><span style="font:10px/1.8 ui-monospace,Menlo,monospace;letter-spacing:.1em;text-align:center">UGC VIDEO 01<br>網紅短片 9:16</span></div>
+            <p style="margin:0;font-size:12px">@creator_01</p>
+            <p style="margin:0;font-size:11px;line-height:1.7;opacity:.6;white-space:normal">「洗完頭髮真的順到不行，回購第三次。」</p>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:14px;width:264px;margin-left:40px">
+            <div style="aspect-ratio:9/16;border:1px solid #000;background:repeating-linear-gradient(45deg,#f4f2ee 0 10px,#fff 10px 20px);display:flex;justify-content:center;align-items:center"><span style="font:10px/1.8 ui-monospace,Menlo,monospace;letter-spacing:.1em;text-align:center">UGC VIDEO 02<br>網紅短片 9:16</span></div>
+            <p style="margin:0;font-size:12px">@creator_02</p>
+            <p style="margin:0;font-size:11px;line-height:1.7;opacity:.6;white-space:normal">「香味超級療癒，睡前保養必備。」</p>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:14px;width:264px;margin-left:40px">
+            <div style="aspect-ratio:9/16;border:1px solid #000;background:repeating-linear-gradient(45deg,#f4f2ee 0 10px,#fff 10px 20px);display:flex;justify-content:center;align-items:center"><span style="font:10px/1.8 ui-monospace,Menlo,monospace;letter-spacing:.1em;text-align:center">UGC VIDEO 03<br>網紅短片 9:16</span></div>
+            <p style="margin:0;font-size:12px">@creator_03</p>
+            <p style="margin:0;font-size:11px;line-height:1.7;opacity:.6;white-space:normal">「染燙後的救星，毛躁感消失了。」</p>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:14px;width:264px;margin-left:40px">
+            <div style="aspect-ratio:9/16;border:1px solid #000;background:repeating-linear-gradient(45deg,#f4f2ee 0 10px,#fff 10px 20px);display:flex;justify-content:center;align-items:center"><span style="font:10px/1.8 ui-monospace,Menlo,monospace;letter-spacing:.1em;text-align:center">UGC VIDEO 04<br>網紅短片 9:16</span></div>
+            <p style="margin:0;font-size:12px">@creator_04</p>
+            <p style="margin:0;font-size:11px;line-height:1.7;opacity:.6;white-space:normal">「設計師朋友也在用，質感沒話說。」</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <div id="gal-modal" style="position:fixed;inset:0;z-index:208;display:flex;justify-content:center;align-items:center;background:rgba(0,0,0,.45);opacity:0;pointer-events:none;transition:opacity .3s">
+    <div style="position:relative;width:min(460px,88vw);max-height:82vh;overflow:auto;background:#fff;border:1px solid #000;padding:40px 40px 30px">
+      <button id="gal-close" style="position:absolute;top:18px;right:18px;width:34px;height:34px;border:1px solid #000;border-radius:50%;background:#fff;color:#000;font-family:inherit;font-size:14px;cursor:pointer">×</button>
+      <h3 id="gal-title" style="margin:0;font-size:20px;font-weight:400">( Gallery )</h3>
+      <div style="margin-top:26px;aspect-ratio:500/672;max-height:52vh;overflow:hidden">
+        <img id="gal-img" src="assets/product_5_kikii.jpg" alt="Gallery image" style="width:100%;height:100%;object-fit:cover;transition:opacity .2s">
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:20px">
+        <button id="gal-prev" style="display:flex;justify-content:center;align-items:center;width:34px;height:34px;border:1px solid #000;border-radius:50%;background:#fff;color:#000;font-family:inherit;font-size:13px;cursor:pointer;transition:background-color 80ms,color 80ms">←</button>
+        <p id="gal-count" style="margin:0;font-size:12px;letter-spacing:.15em">1 / 3</p>
+        <button id="gal-next" style="display:flex;justify-content:center;align-items:center;width:34px;height:34px;border:1px solid #000;border-radius:50%;background:#fff;color:#000;font-family:inherit;font-size:13px;cursor:pointer;transition:background-color 80ms,color 80ms">→</button>
+      </div>
+    </div>
+  </div>
+  <div id="spec-modal" style="position:fixed;inset:0;z-index:205;display:flex;justify-content:center;align-items:center;background:rgba(0,0,0,.45);opacity:0;pointer-events:none;transition:opacity .3s">
+    <div style="position:relative;width:min(880px,92vw);max-height:82vh;overflow:auto;background:#fff;border:1px solid #000;padding:50px 50px 40px">
+      <button id="spec-close" style="position:absolute;top:18px;right:18px;width:34px;height:34px;border:1px solid #000;border-radius:50%;background:#fff;color:#000;font-family:inherit;font-size:14px;cursor:pointer;transition:background-color 80ms,color 80ms" class="hv16">×</button>
+      <h3 style="margin:0;font-size:20px;font-weight:400">( Product Spec )</h3>
+      <div class="spec-row" style="display:flex;gap:50px;margin-top:30px;align-items:flex-start">
+      <div style="flex:none;width:260px;aspect-ratio:3/4;border:1px solid #000;background:repeating-linear-gradient(45deg,#f4f2ee 0 10px,#fff 10px 20px);display:flex;justify-content:center;align-items:center"><span style="font:10px/1.8 ui-monospace,Menlo,monospace;letter-spacing:.1em;text-align:center">PRODUCT PHOTO<br>產品圖 3:4</span></div>
+      <div style="flex:1;border-top:1px solid #000">
+        <div style="display:flex;gap:30px;padding:16px 0;border-bottom:1px solid rgba(0,0,0,.15)"><span style="flex:none;width:90px;font-size:12px;opacity:.5">品名</span><span style="font-size:12px;line-height:1.8">MoodKeys Portable Aroma Diffuser（待品牌內容替換）</span></div>
+        <div style="display:flex;gap:30px;padding:16px 0;border-bottom:1px solid rgba(0,0,0,.15)"><span style="flex:none;width:90px;font-size:12px;opacity:.5">尺寸</span><span style="font-size:12px;line-height:1.8">待補</span></div>
+        <div style="display:flex;gap:30px;padding:16px 0;border-bottom:1px solid rgba(0,0,0,.15)"><span style="flex:none;width:90px;font-size:12px;opacity:.5">重量</span><span style="font-size:12px;line-height:1.8">待補</span></div>
+        <div style="display:flex;gap:30px;padding:16px 0;border-bottom:1px solid rgba(0,0,0,.15)"><span style="flex:none;width:90px;font-size:12px;opacity:.5">材質</span><span style="font-size:12px;line-height:1.8">待補</span></div>
+        <div style="display:flex;gap:30px;padding:16px 0;border-bottom:1px solid rgba(0,0,0,.15)"><span style="flex:none;width:90px;font-size:12px;opacity:.5">香調</span><span style="font-size:12px;line-height:1.8">待補</span></div>
+        <div style="display:flex;gap:30px;padding:16px 0;border-bottom:1px solid rgba(0,0,0,.15)"><span style="flex:none;width:90px;font-size:12px;opacity:.5">內容物</span><span style="font-size:12px;line-height:1.8">待補</span></div>
+      </div>
+      </div>
+    </div>
+  </div>
+  <div id="faq-modal" style="position:fixed;inset:0;z-index:200;display:flex;justify-content:center;align-items:center;background:rgba(0,0,0,.45);opacity:0;pointer-events:none;transition:opacity .3s">
+    <div style="position:relative;width:min(640px,88vw);max-height:80vh;overflow:auto;background:#fff;border:1px solid #000;padding:50px 50px 40px">
+      <button id="faq-close" style="position:absolute;top:18px;right:18px;width:34px;height:34px;border:1px solid #000;border-radius:50%;background:#fff;color:#000;font-family:inherit;font-size:14px;cursor:pointer;transition:background-color 80ms,color 80ms" class="hv17">×</button>
+      <div id="faqpanel0" style="display:none">
+        <h3 style="margin:0;font-size:20px;font-weight:400">( 產品 FAQ )</h3>
+        <div style="margin-top:30px;border-top:1px solid #000">
+          <div style="padding:20px 0;border-bottom:1px solid rgba(0,0,0,.15)"><p style="margin:0;font-size:13px">Q. 適合什麼髮質使用？</p><p style="margin:12px 0 0;font-size:12px;line-height:1.9;opacity:.6">A. 此處放入產品適用髮質說明（待品牌內容替換）。</p></div>
+          <div style="padding:20px 0;border-bottom:1px solid rgba(0,0,0,.15)"><p style="margin:0;font-size:13px">Q. 成分是否天然、敏感肌可用嗎？</p><p style="margin:12px 0 0;font-size:12px;line-height:1.9;opacity:.6">A. 此處放入成分與敏感肌說明（待品牌內容替換）。</p></div>
+          <div style="padding:20px 0;border-bottom:1px solid rgba(0,0,0,.15)"><p style="margin:0;font-size:13px">Q. 建議的使用頻率與用量？</p><p style="margin:12px 0 0;font-size:12px;line-height:1.9;opacity:.6">A. 此處放入使用方式說明（待品牌內容替換）。</p></div>
+        </div>
+      </div>
+      <div id="faqpanel1" style="display:none">
+        <h3 style="margin:0;font-size:20px;font-weight:400">( 運送 FAQ )</h3>
+        <div style="margin-top:30px;border-top:1px solid #000">
+          <div style="padding:20px 0;border-bottom:1px solid rgba(0,0,0,.15)"><p style="margin:0;font-size:13px">Q. 出貨時間與運送天數？</p><p style="margin:12px 0 0;font-size:12px;line-height:1.9;opacity:.6">A. 此處放入出貨與配送時程（待品牌內容替換）。</p></div>
+          <div style="padding:20px 0;border-bottom:1px solid rgba(0,0,0,.15)"><p style="margin:0;font-size:13px">Q. 運費怎麼計算？滿額免運嗎？</p><p style="margin:12px 0 0;font-size:12px;line-height:1.9;opacity:.6">A. 此處放入運費規則（待品牌內容替換）。</p></div>
+          <div style="padding:20px 0;border-bottom:1px solid rgba(0,0,0,.15)"><p style="margin:0;font-size:13px">Q. 可以指定超商取貨或宅配時段嗎？</p><p style="margin:12px 0 0;font-size:12px;line-height:1.9;opacity:.6">A. 此處放入取貨方式說明（待品牌內容替換）。</p></div>
+        </div>
+      </div>
+      <div id="faqpanel2" style="display:none">
+        <h3 style="margin:0;font-size:20px;font-weight:400">( 募資 FAQ )</h3>
+        <div style="margin-top:30px;border-top:1px solid #000">
+          <div style="padding:20px 0;border-bottom:1px solid rgba(0,0,0,.15)"><p style="margin:0;font-size:13px">Q. 嘖嘖募資什麼時候開始？</p><p style="margin:12px 0 0;font-size:12px;line-height:1.9;opacity:.6">A. 此處放入募資時程（待品牌內容替換）。</p></div>
+          <div style="padding:20px 0;border-bottom:1px solid rgba(0,0,0,.15)"><p style="margin:0;font-size:13px">Q. 早鳥方案有哪些？</p><p style="margin:12px 0 0;font-size:12px;line-height:1.9;opacity:.6">A. 此處放入方案內容（待品牌內容替換）。</p></div>
+          <div style="padding:20px 0;border-bottom:1px solid rgba(0,0,0,.15)"><p style="margin:0;font-size:13px">Q. 募資結束後何時出貨？</p><p style="margin:12px 0 0;font-size:12px;line-height:1.9;opacity:.6">A. 此處放入出貨規劃（待品牌內容替換）。</p></div>
+        </div>
+      </div>
+      <div id="faqpanel3" style="display:none">
+        <h3 style="margin:0;font-size:20px;font-weight:400">( 保固與售後 FAQ )</h3>
+        <div style="margin-top:30px;border-top:1px solid #000">
+          <div style="padding:20px 0;border-bottom:1px solid rgba(0,0,0,.15)"><p style="margin:0;font-size:13px">Q. 收到商品有瑕疵怎麼辦？</p><p style="margin:12px 0 0;font-size:12px;line-height:1.9;opacity:.6">A. 此處放入瑕疵處理流程（待品牌內容替換）。</p></div>
+          <div style="padding:20px 0;border-bottom:1px solid rgba(0,0,0,.15)"><p style="margin:0;font-size:13px">Q. 可以退換貨嗎？期限多久？</p><p style="margin:12px 0 0;font-size:12px;line-height:1.9;opacity:.6">A. 此處放入退換貨政策（待品牌內容替換）。</p></div>
+          <div style="padding:20px 0;border-bottom:1px solid rgba(0,0,0,.15)"><p style="margin:0;font-size:13px">Q. 售後問題要找誰？</p><p style="margin:12px 0 0;font-size:12px;line-height:1.9;opacity:.6">A. 此處放入客服聯絡方式（待品牌內容替換）。</p></div>
+        </div>
+      </div>
+      <div id="faqpanel4" style="display:none">
+        <h3 style="margin:0;font-size:20px;font-weight:400">( 公司介紹 )</h3>
+        <div style="margin-top:30px;border-top:1px solid #000">
+          <div style="padding:20px 0;border-bottom:1px solid rgba(0,0,0,.15)"><p style="margin:0;font-size:12px;line-height:2.2;opacity:.7">此處放入品牌故事與公司簡介（待品牌內容替換）：品牌理念、團隊背景、產地與製造，以及聯絡資訊。</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer data-screen-label="Footer" style="position:relative;z-index:16;background:#fff">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;width:87.5%;margin:0 auto;padding:110px 0 60px">
+      <h2 class="h2-big" style="margin:0;font-size:40px;font-weight:400">( FAQ )</h2>
+      <p style="margin:0;font-size:12px;letter-spacing:.1em">常見問題</p>
+    </div>
+    <div class="faq-tiles" style="display:flex;justify-content:space-between;align-items:stretch;position:relative;border-top:1px solid #000;border-bottom:1px solid #000">
+      <a href="#" id="faqtile0" style="position:relative;width:20%;aspect-ratio:512/660;overflow:hidden;display:block">
+        <img src="assets/footer_link_1.jpg" alt="FAQ" style="width:100%;height:100%;object-fit:cover;transition:transform .55s cubic-bezier(.215,.61,.355,1)" class="hv18">
+        <span style="position:absolute;top:50%;transform:translateY(-50%);left:0;width:100%;text-align:center;color:#fff;font-size:12px;pointer-events:none">產品 FAQ</span>
+      </a>
+      <a href="#" id="faqtile1" style="position:relative;width:20%;aspect-ratio:512/660;overflow:hidden;display:block">
+        <img src="assets/footer_link_2.jpg" alt="Delivery" style="width:100%;height:100%;object-fit:cover;transition:transform .55s cubic-bezier(.215,.61,.355,1)" class="hv19">
+        <span style="position:absolute;top:50%;transform:translateY(-50%);left:0;width:100%;text-align:center;color:#fff;font-size:12px;pointer-events:none">運送 FAQ</span>
+      </a>
+      <a href="#" id="faqtile2" style="position:relative;width:20%;aspect-ratio:512/660;overflow:hidden;display:block">
+        <img src="assets/footer_link_3.jpg" alt="Stockist" style="width:100%;height:100%;object-fit:cover;transition:transform .55s cubic-bezier(.215,.61,.355,1)" class="hv20">
+        <span style="position:absolute;top:50%;transform:translateY(-50%);left:0;width:100%;text-align:center;color:#fff;font-size:12px;pointer-events:none">募資 FAQ</span>
+      </a>
+      <a href="#" id="faqtile3" style="position:relative;width:20%;aspect-ratio:512/660;overflow:hidden;display:block">
+        <img src="assets/footer_link_4.jpg" alt="Returns and Exchanges" style="width:100%;height:100%;object-fit:cover;transition:transform .55s cubic-bezier(.215,.61,.355,1)" class="hv21">
+        <span style="position:absolute;top:50%;transform:translateY(-50%);left:0;width:100%;text-align:center;color:#fff;font-size:12px;pointer-events:none">保固與售後 FAQ</span>
+      </a>
+      <a href="#" id="faqtile4" style="position:relative;width:20%;aspect-ratio:512/660;overflow:hidden;display:block">
+        <img src="assets/footer_link_5.jpg" alt="Company" style="width:100%;height:100%;object-fit:cover;transition:transform .55s cubic-bezier(.215,.61,.355,1)" class="hv22">
+        <span style="position:absolute;top:50%;transform:translateY(-50%);left:0;width:100%;text-align:center;color:#fff;font-size:12px;pointer-events:none">公司介紹</span>
+      </a>
+    </div>
+    <div data-screen-label="Mood Marquee" style="overflow:hidden;padding:140px 0 40px">
+      <div style="display:flex;white-space:nowrap">
+        <div style="display:flex;animation:loop_right 55s linear infinite"><div style="flex:none;width:226px;margin-left:50px"><img src="assets/story_1.jpg" alt="" style="width:100%;height:300px;object-fit:cover;display:block"></div><span style="flex:none;display:flex;align-items:center;margin-left:50px;font-size:26px;letter-spacing:.08em">髪に、指先に、</span><div style="flex:none;width:220px;margin-left:50px"><img src="assets/philosophy_2.jpg" alt="" style="width:100%;height:300px;object-fit:cover;display:block"></div><span style="flex:none;display:flex;align-items:center;margin-left:50px;font-size:26px;letter-spacing:.08em">つづく日々に。</span><div style="flex:none;width:300px;margin-left:50px"><img src="assets/story_3.jpg" alt="" style="width:100%;height:300px;object-fit:cover;display:block"></div><span style="flex:none;display:flex;align-items:center;margin-left:50px;font-size:26px;letter-spacing:.08em">( Re’lilla )</span><div style="flex:none;width:280px;margin-left:50px"><img src="assets/story_2.jpg" alt="" style="width:100%;height:300px;object-fit:cover;display:block"></div></div>
+        <div style="display:flex;animation:loop_right 55s linear infinite"><div style="flex:none;width:226px;margin-left:50px"><img src="assets/story_1.jpg" alt="" style="width:100%;height:300px;object-fit:cover;display:block"></div><span style="flex:none;display:flex;align-items:center;margin-left:50px;font-size:26px;letter-spacing:.08em">髪に、指先に、</span><div style="flex:none;width:220px;margin-left:50px"><img src="assets/philosophy_2.jpg" alt="" style="width:100%;height:300px;object-fit:cover;display:block"></div><span style="flex:none;display:flex;align-items:center;margin-left:50px;font-size:26px;letter-spacing:.08em">つづく日々に。</span><div style="flex:none;width:300px;margin-left:50px"><img src="assets/story_3.jpg" alt="" style="width:100%;height:300px;object-fit:cover;display:block"></div><span style="flex:none;display:flex;align-items:center;margin-left:50px;font-size:26px;letter-spacing:.08em">( Re’lilla )</span><div style="flex:none;width:280px;margin-left:50px"><img src="assets/story_2.jpg" alt="" style="width:100%;height:300px;object-fit:cover;display:block"></div></div>
+      </div>
+    </div>
+    <div data-screen-label="Footer Main" style="background-color: #FFFFFF">
+      <div class="ft-main" style="display:flex;justify-content:space-between;align-items:flex-start;width:87.5%;margin:auto;padding:100px 0 90px">
+        <div>
+          <a href="#" style="display:block"><img src="assets/logo-black.svg" alt="Logo" style="height:30px;width:auto;display:block"></a>
+          <p style="margin:22px 0 0;font-size:11px;line-height:1.7;letter-spacing:.04em">MoodKeys<br>Portable Aroma Diffuser</p>
+        </div>
+        <nav style="display:flex;flex-direction:column;gap:18px;width:30%">
+          <a href="#" style="font-size:12px">Top</a>
+          <a href="#" style="font-size:12px">Product</a>
+          <a href="#" style="font-size:12px">Our Story</a>
+          <a href="#" style="font-size:12px">How to</a>
+          <a href="#" style="font-size:12px">Episode</a>
+          <a href="#" style="font-size:12px">FAQ</a>
+          <a href="mailto:relillaonline@gmail.com" style="font-size:12px">Contact</a>
+          <div style="display:flex;align-items:center;gap:20px;margin-top:28px">
+            <a href="mailto:relillaonline@gmail.com" aria-label="Mail" title="Mail" style="display:flex"><svg width="20" height="20" viewBox="0 0 24 24"><rect x="2" y="4.5" width="20" height="15" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"></rect><path d="M3 6.5l9 6.5 9-6.5" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg></a>
+            <a href="#" aria-label="LINE" title="LINE" style="display:flex"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M12 3.5C6.9 3.5 2.75 6.9 2.75 11c0 2.3 1.4 4.4 3.5 5.8-.1.6-.5 2-.6 2.4 0 0-.1.4.2.5.2.2.5 0 .5 0 .5-.2 2.5-1.5 3.4-2.1.7.1 1.5.2 2.25.2 5.1 0 9.25-3.4 9.25-7.3S17.1 3.5 12 3.5z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path></svg></a>
+            <a href="#" aria-label="Instagram" title="Instagram" style="display:flex"><svg width="20" height="20" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.5"></rect><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.5"></circle><circle cx="17.2" cy="6.8" r="1.3" fill="currentColor"></circle></svg></a>
+            <a href="#" aria-label="Facebook" title="Facebook" style="display:flex"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M17.5 2.75h-2.75a4.75 4.75 0 0 0-4.75 4.75v3H7v4h3v6.75h4V14.5h3l1-4h-4V7.5a1 1 0 0 1 1-1h2.5z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path></svg></a>
+            <a href="#" aria-label="Threads" title="Threads" style="display:flex"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="4"></circle><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8"></path></svg></a>
+          </div>
+        </nav>
+        <div style="position:relative;width:120px;aspect-ratio:3/4">
+          <img id="frot0" src="assets/story_1.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:1;transition:opacity 1s">
+          <img id="frot1" src="assets/philosophy_2.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1s">
+          <img id="frot2" src="assets/story_3.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1s">
+        </div>
+      </div>
+      <div style="width:87.5%;margin:auto;border-top:1px solid rgba(0,0,0,.25)">
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:26px 0 34px">
+          <div style="display:flex;align-items:center;gap:12px">
+            <span style="display:flex;justify-content:center;align-items:center;width:26px;height:26px;border:1px solid #000;border-radius:50%;font-size:10px">R</span>
+            <span style="font-size:11px;letter-spacing:.15em">PRODUCED BY ICI</span>
+          </div>
+          <div style="display:flex;gap:30px">
+            <a href="#" style="font-size:11px">Trade Law</a>
+            <a href="#" style="font-size:11px">Privacy policy</a>
+            <a href="#" style="font-size:11px">Terms</a>
+          </div>
+          <span style="font-size:11px;opacity:.5">© 2026 Re’lilla</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+</div>
+<script>
+class Site {
+  constructor() {
+    this.props = { kvAutoplay: true, kvInterval: 4.5, smoothScroll: false };
+  }
+  init() {
+    // Logo preloader: blur fade-in, then overlay fades out
+    const pre = document.getElementById('preloader');
+    const preLogo = document.getElementById('preloader-logo');
+    if (pre && preLogo) {
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        preLogo.style.opacity = '1'; preLogo.style.filter = 'blur(0)'; preLogo.style.transform = 'scale(1)';
+      }));
+      setTimeout(() => {
+        pre.style.opacity = '0'; pre.style.pointerEvents = 'none';
+        setTimeout(() => { pre.style.display = 'none'; }, 850);
+      }, 1900);
+    }
+    // Secret: proximity blur-reveal — chars sharpen/scale as the cursor nears
+    document.querySelectorAll('[data-secret]').forEach((secret) => {
+      [...secret.childNodes].forEach((n) => {
+        if (n.nodeType !== 3) return;
+        const frag = document.createDocumentFragment();
+        let word = null;
+        [...n.textContent].forEach((ch) => {
+          if (ch === ' ') { frag.append(ch); word = null; return; }
+          if (/[\u3000-\u9fff\uf900-\ufaff\uff00-\uffef]/.test(ch)) word = null; // CJK: break per char
+          if (!word) {
+            word = document.createElement('span');
+            word.style.cssText = 'display:inline-block;white-space:nowrap';
+            frag.append(word);
+          }
+          const s = document.createElement('span');
+          s.className = 'secret-ch';
+          s.textContent = ch;
+          s.style.cssText = 'display:inline-block;filter:blur(8px);opacity:.35;transform:scale(.7);transition:filter .12s ease-out,transform .12s ease-out,opacity .12s ease-out';
+          word.append(s);
+        });
+        n.replaceWith(frag);
+      });
+      const chars = [...secret.querySelectorAll('.secret-ch')];
+      let px = 0, py = 0, raf = 0;
+      window.addEventListener('pointermove', (e) => {
+        px = e.clientX; py = e.clientY;
+        if (raf) return;
+        raf = requestAnimationFrame(() => {
+          raf = 0;
+          const b = secret.getBoundingClientRect();
+          if (Math.hypot(px - (b.x + b.width / 2), py - (b.y + b.height / 2)) > Math.max(b.width, b.height) / 2 + 280) return;
+          chars.forEach((s) => {
+            const r = s.getBoundingClientRect();
+            const d = Math.hypot(px - (r.x + r.width / 2), py - (r.y + r.height / 2));
+            const deg = Math.min(90, Math.max(0, (d - 350) * -0.3214)); // reveal circle ×1.4 (350→70px)
+            const a = Math.sin(deg * Math.PI / 180);
+            s.style.filter = 'blur(' + ((1 - a) * 8).toFixed(2) + 'px)';
+            s.style.opacity = (0.35 + a * 0.65).toFixed(3);
+            s.style.transform = 'scale(' + (0.7 + a * 0.3).toFixed(3) + ')';
+          });
+        });
+      }, { passive: true });
+    });
+    // hide sticky header once the footer comes into view
+    const hdr = document.querySelector('header[data-screen-label="Header"]');
+    const ftr = document.querySelector('footer[data-screen-label="Footer"]');
+    if (hdr && ftr) {
+      hdr.style.transition = 'transform .45s cubic-bezier(.165,.84,.44,1)';
+      new IntersectionObserver((es) => {
+        hdr.style.transform = es[0].isIntersecting ? 'translateY(-101%)' : 'translateY(0)';
+      }, { rootMargin: '0px 0px 0px 0px' }).observe(ftr);
+    }
+    // Lenis-style smooth (inertia) scrolling
+    this.scrollCur = window.scrollY;
+    this.scrollTarget = window.scrollY;
+    this.scrollRaf = null;
+    this.wheelTs = 0;
+    this.onWheel = (e) => {
+      if (this.props.smoothScroll === false || e.ctrlKey) return;
+      e.preventDefault();
+      const dy = e.deltaMode === 1 ? e.deltaY * 16 : e.deltaY;
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      this.scrollTarget = Math.max(0, Math.min(max, this.scrollTarget + dy));
+      this.wheelTs = performance.now();
+      if (!this.scrollRaf) { this.lastT = performance.now(); this.scrollRaf = requestAnimationFrame(this.scrollTick); }
+    };
+    this.scrollTick = (now) => {
+      const dt = Math.min(48, now - (this.lastT || now));
+      this.lastT = now;
+      // time-based exponential smoothing (~120ms settle), frame-rate independent
+      const k = 1 - Math.exp(-dt / 110);
+      this.scrollCur += (this.scrollTarget - this.scrollCur) * k;
+      if (Math.abs(this.scrollTarget - this.scrollCur) < 0.5) {
+        this.scrollCur = this.scrollTarget;
+        window.scrollTo(0, this.scrollCur);
+        this.scrollRaf = null;
+        return;
+      }
+      window.scrollTo(0, this.scrollCur);
+      this.scrollRaf = requestAnimationFrame(this.scrollTick);
+    };
+    this.onNativeScroll = () => {
+      if (!this.scrollRaf) { this.scrollCur = window.scrollY; this.scrollTarget = window.scrollY; }
+    };
+    window.addEventListener('wheel', this.onWheel, { passive: false });
+    window.addEventListener('scroll', this.onNativeScroll, { passive: true });
+    // Episode: fade in horizontal label when the vertical number gets covered by the next card
+    this.onEpScroll = () => {
+      for (let i = 0; i < 4; i++) {
+        const cur = document.getElementById('ep' + i);
+        const next = document.getElementById('ep' + (i + 1));
+        const label = document.getElementById('eplabel' + i);
+        if (!cur || !next || !label) continue;
+        const covered = next.getBoundingClientRect().top <= cur.getBoundingClientRect().top + 170;
+        label.style.opacity = covered ? '1' : '0';
+        const vert = document.getElementById('epvert' + i);
+        if (vert) vert.style.opacity = covered ? '0' : '1';
+      }
+    };
+    window.addEventListener('scroll', this.onEpScroll, { passive: true });
+    this.onEpScroll();
+    this.kvIndex = 0;
+    this.startKv();
+
+    // footer photo rotator
+    this.frotIndex = 0;
+    this.frotTimer = setInterval(() => {
+      this.frotIndex = (this.frotIndex + 1) % 3;
+      for (let k = 0; k < 3; k++) {
+        const im = document.getElementById('frot' + k);
+        if (im) im.style.opacity = k === this.frotIndex ? '1' : '0';
+      }
+    }, 3200);
+    const v = document.getElementById('kv-video');
+    if (v) { v.muted = true; const p = v.play(); if (p) p.catch(() => {}); }
+    for (let i = 0; i < 4; i++) {
+      const b = document.getElementById('kvnav' + i);
+      if (b) b.addEventListener('click', () => { this.kvGo(i); this.startKv(); });
+    }
+    this.recIndex = 0;
+    const startRec = () => {
+      clearInterval(this.recTimer);
+      this.recTimer = setInterval(() => this.recGo((this.recIndex + 1) % 2), 5000);
+    };
+    startRec();
+    for (let i = 0; i < 2; i++) {
+      const b = document.getElementById('recnav' + i);
+      if (b) b.addEventListener('click', () => { this.recGo(i); startRec(); });
+    }
+    const btn = document.getElementById('cta-btn');
+    const panel = document.getElementById('cta-panel');
+    const caret = document.getElementById('cta-caret');
+    if (btn && panel) {
+      this.ctaOpen = false;
+      const setOpen = (open) => {
+        this.ctaOpen = open;
+        panel.style.opacity = open ? '1' : '0';
+        panel.style.transform = open ? 'translateY(0)' : 'translateY(-8px)';
+        panel.style.pointerEvents = open ? 'auto' : 'none';
+        if (caret) caret.style.transform = open ? 'rotate(180deg)' : 'rotate(0)';
+      };
+      btn.addEventListener('click', (e) => { e.stopPropagation(); setOpen(!this.ctaOpen); });
+      document.addEventListener('click', () => { if (this.ctaOpen) setOpen(false); });
+    }
+    // FAQ modal — delegated so listeners survive template re-renders
+    const showFaq = (i) => {
+      const modal = document.getElementById('faq-modal');
+      if (!modal) return;
+      for (let k = 0; k < 5; k++) {
+        const p = document.getElementById('faqpanel' + k);
+        if (p) p.style.display = k === i ? 'block' : 'none';
+      }
+      modal.style.opacity = '1';
+      modal.style.pointerEvents = 'auto';
+    };
+    const hideFaq = () => {
+      const modal = document.getElementById('faq-modal');
+      if (!modal) return;
+      modal.style.opacity = '0';
+      modal.style.pointerEvents = 'none';
+    };
+    document.addEventListener('click', (e) => {
+      const tile = e.target.closest && e.target.closest('a[id^="faqtile"]');
+      if (tile) { e.preventDefault(); showFaq(parseInt(tile.id.slice(7), 10)); return; }
+      if (e.target.closest && e.target.closest('#faq-close')) { hideFaq(); return; }
+      if (e.target.id === 'faq-modal') hideFaq();
+    });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') hideFaq(); });
+    // video lightbox (delegated)
+    const setVideoModal = (open) => {
+      const m = document.getElementById('video-modal');
+      const p = document.getElementById('video-modal-player');
+      if (!m) return;
+      m.style.opacity = open ? '1' : '0';
+      m.style.pointerEvents = open ? 'auto' : 'none';
+      if (p) { if (open) { p.currentTime = 0; p.muted = false; const pr = p.play(); if (pr) pr.catch(() => {}); } else { p.pause(); } }
+    };
+    document.addEventListener('click', (e) => {
+      if (e.target.closest && e.target.closest('#video-thumb')) { e.preventDefault(); setVideoModal(true); return; }
+      if (e.target.closest && e.target.closest('#video-modal-close')) { setVideoModal(false); return; }
+      if (e.target.id === 'video-modal') setVideoModal(false);
+      const specModal = document.getElementById('spec-modal');
+      if (specModal) {
+        if (e.target.closest && e.target.closest('[data-spec-btn]')) { e.preventDefault(); specModal.style.opacity = '1'; specModal.style.pointerEvents = 'auto'; return; }
+        if ((e.target.closest && e.target.closest('#spec-close')) || e.target.id === 'spec-modal') { specModal.style.opacity = '0'; specModal.style.pointerEvents = 'none'; }
+      }
+    });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setVideoModal(false); });
+    // product image gallery lightbox
+    this.gal = { srcs: [], i: 0 };
+    const galModal = () => document.getElementById('gal-modal');
+    const galShow = () => {
+      const img = document.getElementById('gal-img');
+      const cnt = document.getElementById('gal-count');
+      if (img) { img.style.opacity = '0'; setTimeout(() => { img.src = this.gal.srcs[this.gal.i]; img.style.opacity = '1'; }, 120); }
+      if (cnt) cnt.textContent = (this.gal.i + 1) + ' / ' + this.gal.srcs.length;
+    };
+    const galOpen = (open) => { const m = galModal(); if (m) { m.style.opacity = open ? '1' : '0'; m.style.pointerEvents = open ? 'auto' : 'none'; } };
+    document.addEventListener('click', (e) => {
+      const trig = e.target.closest && e.target.closest('[data-gallery]');
+      if (trig) {
+        e.preventDefault();
+        this.gal.srcs = trig.getAttribute('data-gallery').split(',');
+        this.gal.i = 0;
+        const t = document.getElementById('gal-title');
+        if (t) t.textContent = '( ' + (trig.getAttribute('data-gallery-title') || 'Gallery') + ' )';
+        const img = document.getElementById('gal-img');
+        if (img) { img.src = this.gal.srcs[0]; img.style.opacity = '1'; }
+        const cnt = document.getElementById('gal-count');
+        if (cnt) cnt.textContent = '1 / ' + this.gal.srcs.length;
+        galOpen(true); return;
+      }
+      if (e.target.closest && e.target.closest('#gal-prev')) { this.gal.i = (this.gal.i - 1 + this.gal.srcs.length) % this.gal.srcs.length; galShow(); return; }
+      if (e.target.closest && e.target.closest('#gal-next')) { this.gal.i = (this.gal.i + 1) % this.gal.srcs.length; galShow(); return; }
+      if ((e.target.closest && e.target.closest('#gal-close')) || e.target.id === 'gal-modal') galOpen(false);
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') galOpen(false);
+      const m = galModal();
+      if (m && m.style.opacity === '1') {
+        if (e.key === 'ArrowLeft') { this.gal.i = (this.gal.i - 1 + this.gal.srcs.length) % this.gal.srcs.length; galShow(); }
+        if (e.key === 'ArrowRight') { this.gal.i = (this.gal.i + 1) % this.gal.srcs.length; galShow(); }
+      }
+    });
+  }
+  startKv() {
+    clearInterval(this.kvTimer);
+    if (this.props.kvAutoplay === false) return;
+    const sec = (this.props.kvInterval ?? 4.5) * 1000;
+    this.kvTimer = setInterval(() => this.kvGo((this.kvIndex + 1) % 4), sec);
+  }
+  kvGo(i) {
+    this.kvIndex = i;
+    for (let k = 0; k < 4; k++) {
+      const bg = document.getElementById('kvbg' + k);
+      if (bg) bg.style.opacity = k === i ? '1' : '0';
+      const nav = document.getElementById('kvnav' + k);
+      if (nav) {
+        nav.style.background = k === i ? '#fff' : 'transparent';
+        nav.style.color = k === i ? '#000' : '#fff';
+      }
+    }
+  }
+  recGo(i) {
+    this.recIndex = i;
+    for (let k = 0; k < 2; k++) {
+      const s = document.getElementById('rec' + k);
+      if (s) { s.style.opacity = k === i ? '1' : '0'; s.style.pointerEvents = k === i ? 'auto' : 'none'; }
+      const nav = document.getElementById('recnav' + k);
+      if (nav) {
+        nav.style.background = k === i ? '#000' : '#fff';
+        nav.style.color = k === i ? '#fff' : '#000';
+      }
+    }
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => { new Site().init(); });
+
+</script>
+</body>
+</html>
