@@ -1252,5 +1252,121 @@ class Site {
 document.addEventListener('DOMContentLoaded',()=>{ new Site().init(); });
 
 </script>
+<script src="assets/vendor/gsap.min.js"></script>
+<script src="assets/vendor/ScrollTrigger.min.js"></script>
+<script>
+/* 8VRY motion layer — GSAP. Defensive: no-op if GSAP fails to load,
+   fully disabled for prefers-reduced-motion, desktop-scoped where risky.
+   Does not touch the KV slider, custom smooth-scroll, or sticky sections. */
+(function () {
+  if (!window.gsap || !window.ScrollTrigger) return;
+  gsap.registerPlugin(ScrollTrigger);
+
+  var start = function () {
+    var mm = gsap.matchMedia();
+
+    /* motion only when the user hasn't asked to reduce it */
+    mm.add(
+      { motion: "(prefers-reduced-motion: no-preference)", desktop: "(min-width: 1025px)" },
+      function (ctx) {
+        /* reduced-motion: create no animations at all (nothing gets hidden) */
+        if (!ctx.conditions.motion) return function () {};
+        var isDesktop = ctx.conditions.desktop;
+
+        /* ---------- (2) Hero intro sequence ---------- */
+        var heroBits = [
+          "#kv-fixed nav .mid-nav a",
+          "#kv-fixed #cta-btn",
+          "#kv-fixed > div:nth-child(3) p",   /* headline + subhead block */
+          "#kv-fixed [id^='kvnav']",
+          "#kv-fixed a[href='#p-campaign']"
+        ].map(function (s) { return document.querySelectorAll(s); })
+         .filter(function (n) { return n.length; });
+        if (heroBits.length) {
+          var htl = gsap.timeline({ delay: 2.0, defaults: { ease: "power3.out" } });
+          heroBits.forEach(function (nodes, i) {
+            htl.from(nodes, { y: 18, autoAlpha: 0, duration: 0.9,
+              stagger: 0.08 }, i === 0 ? 0 : "-=0.72");
+          });
+        }
+
+        /* ---------- (1) Scroll reveals ---------- */
+        var revealSel = [
+          "[data-screen-label] h2",
+          ".phi-row > p",
+          ".ep-row > div > p",
+          ".story-row > div > p",
+          ".bv-row + div p"
+        ];
+        revealSel.forEach(function (sel) {
+          gsap.utils.toArray(sel).forEach(function (el) {
+            gsap.from(el, {
+              y: 30, autoAlpha: 0, duration: 1, ease: "power2.out",
+              scrollTrigger: { trigger: el, start: "top 85%", once: true }
+            });
+          });
+        });
+
+        /* FAQ tiles — staggered */
+        var faq = gsap.utils.toArray("a[id^='faqtile']");
+        if (faq.length) {
+          gsap.from(faq, {
+            y: 34, autoAlpha: 0, duration: 0.8, ease: "power2.out",
+            stagger: 0.08,
+            scrollTrigger: { trigger: faq[0], start: "top 85%", once: true }
+          });
+        }
+
+        /* ---------- (4) Product cards: horizontal slide-in (desktop) ---------- */
+        var cards = gsap.utils.toArray(".pcard");
+        if (cards.length) {
+          if (isDesktop) {
+            gsap.from(cards, {
+              xPercent: 8, autoAlpha: 0, duration: 0.9, ease: "power3.out",
+              stagger: 0.12,
+              scrollTrigger: { trigger: cards[0], start: "top 80%", once: true }
+            });
+          } else {
+            gsap.from(cards, {
+              y: 30, autoAlpha: 0, duration: 0.8, ease: "power2.out", stagger: 0.1,
+              scrollTrigger: { trigger: cards[0], start: "top 85%", once: true }
+            });
+          }
+        }
+
+        /* ---------- (3) Parallax — desktop only, images inside overflow-hidden covers ---------- */
+        if (isDesktop) {
+          gsap.utils.toArray(".rec-img img, .bv-row video").forEach(function (img) {
+            gsap.fromTo(img, { yPercent: -6 }, {
+              yPercent: 6, ease: "none",
+              scrollTrigger: { trigger: img.closest("section, div"), start: "top bottom", end: "bottom top", scrub: true }
+            });
+          });
+          /* large decorative philosophy / story imagery — gentle float */
+          gsap.utils.toArray(
+            "[data-screen-label='Philosophy'] > div:nth-child(2) > div:nth-child(1) img," +
+            "[data-screen-label='Our Story'] > div:nth-child(3) > div img"
+          ).forEach(function (img) {
+            gsap.fromTo(img, { yPercent: -4 }, {
+              yPercent: 4, ease: "none",
+              scrollTrigger: { trigger: img, start: "top bottom", end: "bottom top", scrub: true }
+            });
+          });
+        }
+
+        ScrollTrigger.refresh();
+        return function () {}; /* matchMedia auto-reverts on cleanup */
+      }
+    );
+
+    /* keep triggers correct once fonts/images settle */
+    window.addEventListener("load", function () { ScrollTrigger.refresh(); });
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", start);
+  } else { start(); }
+})();
+</script>
 </body>
 </html>
