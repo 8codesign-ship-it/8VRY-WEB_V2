@@ -314,6 +314,20 @@ a[id^="faqtile"]{width:50%!important}
 [data-reveal]{opacity:0;transform:translateY(70px) scale(.98);filter:blur(6px);transition:opacity 1.1s cubic-bezier(.215,.61,.355,1),transform 1.1s cubic-bezier(.215,.61,.355,1),filter 1.1s cubic-bezier(.215,.61,.355,1);will-change:opacity,transform,filter}
 [data-reveal].in{opacity:1;transform:none;filter:none;will-change:auto}
 @media (prefers-reduced-motion:reduce){[data-reveal]{opacity:1!important;transform:none!important;transition:none!important}}
+/* Footer hover. The whole footer had no hover feedback while the main nav did,
+   so this reuses that nav's exact vocabulary rather than inventing a second
+   one: a currentColor gradient grown 0 -> 100% width, same .35s and easing.
+   No colour shift, because these links already sit at full ink (#3c2a1c) and
+   the main nav's underline is likewise colour-neutral. Icons and the logo take
+   opacity instead, which an underline suits badly. */
+/* align-self keeps each link at its text width: the footer nav is a flex COLUMN,
+   so links would otherwise stretch to the full 30% and the underline would run
+   right across the column instead of sitting under the words. */
+.ft-main nav>a,.ft-legal a{align-self:flex-start;background-image:linear-gradient(currentColor,currentColor);background-repeat:no-repeat;background-position:0 100%;background-size:0 1px;transition:background-size .35s cubic-bezier(.215,.61,.355,1);padding-bottom:2px}
+.ft-main nav>a:hover,.ft-legal a:hover{background-size:100% 1px}
+.ft-main nav a[aria-label],.ft-main>div:first-child>a{transition:opacity .35s cubic-bezier(.215,.61,.355,1)}
+.ft-main nav a[aria-label]:hover,.ft-main>div:first-child>a:hover{opacity:.55}
+@media (prefers-reduced-motion:reduce){.ft-main nav>a,.ft-legal a,.ft-main nav a[aria-label],.ft-main>div:first-child>a{transition:none}}
 </style>
 <style>
 .nav-link{position:relative}
@@ -681,7 +695,7 @@ a[id^="faqtile"]{width:50%!important}
         <div id="ep0" style="position:relative;display:flex;height:calc(100vh - 100px);color:#3c2a1c;background:#f0ebe0;border:1px solid #3c2a1c;pointer-events:auto;overflow:hidden">
           <div style="position:relative;width:44%;flex:none;box-sizing:border-box;padding:clamp(18px,4vh,40px) 40px clamp(18px,4vh,40px) 6.25%;display:flex;flex-direction:column;justify-content:space-between">
             <div id="epvert0" style="display:flex;align-items:flex-start;transition:opacity .55s">
-              <span style="writing-mode:vertical-rl;font-size:11px;letter-spacing:.28em;padding-top:8px">STEP</span>
+              <span style="writing-mode:vertical-rl;transform:rotate(180deg);font-size:11px;letter-spacing:.28em;padding-bottom:8px">STEP</span>
               <span class="ep-num" style="margin-left:16px;font-size:clamp(54px,11vh,128px)">01</span>
             </div>
             <div style="max-width:430px">
@@ -702,7 +716,7 @@ a[id^="faqtile"]{width:50%!important}
         <div id="ep1" style="position:relative;display:flex;height:calc(100vh - 144px);color:#3c2a1c;background:#f0ebe0;border:1px solid #3c2a1c;pointer-events:auto;overflow:hidden">
           <div style="position:relative;width:44%;flex:none;box-sizing:border-box;padding:clamp(18px,4vh,40px) 40px clamp(18px,4vh,40px) 6.25%;display:flex;flex-direction:column;justify-content:space-between">
             <div id="epvert1" style="display:flex;align-items:flex-start;transition:opacity .55s">
-              <span style="writing-mode:vertical-rl;font-size:11px;letter-spacing:.28em;padding-top:8px">STEP</span>
+              <span style="writing-mode:vertical-rl;transform:rotate(180deg);font-size:11px;letter-spacing:.28em;padding-bottom:8px">STEP</span>
               <span class="ep-num" style="margin-left:16px;font-size:clamp(54px,11vh,128px)">02</span>
             </div>
             <div style="max-width:430px">
@@ -723,7 +737,7 @@ a[id^="faqtile"]{width:50%!important}
         <div id="ep2" style="position:relative;display:flex;height:calc(100vh - 188px);color:#3c2a1c;background:#f0ebe0;border:1px solid #3c2a1c;pointer-events:auto;overflow:hidden">
           <div style="position:relative;width:44%;flex:none;box-sizing:border-box;padding:clamp(18px,4vh,40px) 40px clamp(18px,4vh,40px) 6.25%;display:flex;flex-direction:column;justify-content:space-between">
             <div id="epvert2" style="display:flex;align-items:flex-start;transition:opacity .55s">
-              <span style="writing-mode:vertical-rl;font-size:11px;letter-spacing:.28em;padding-top:8px">STEP</span>
+              <span style="writing-mode:vertical-rl;transform:rotate(180deg);font-size:11px;letter-spacing:.28em;padding-bottom:8px">STEP</span>
               <span class="ep-num" style="margin-left:16px;font-size:clamp(54px,11vh,128px)">03</span>
             </div>
             <div style="max-width:430px">
@@ -744,7 +758,7 @@ a[id^="faqtile"]{width:50%!important}
         <div id="ep3" style="position:relative;display:flex;height:calc(100vh - 232px);color:#3c2a1c;background:#f0ebe0;border:1px solid #3c2a1c;pointer-events:auto;overflow:hidden">
           <div style="position:relative;width:44%;flex:none;box-sizing:border-box;padding:clamp(18px,4vh,40px) 40px clamp(18px,4vh,40px) 6.25%;display:flex;flex-direction:column;justify-content:space-between">
             <div id="epvert3" style="display:flex;align-items:flex-start;transition:opacity .55s">
-              <span style="writing-mode:vertical-rl;font-size:11px;letter-spacing:.28em;padding-top:8px">STEP</span>
+              <span style="writing-mode:vertical-rl;transform:rotate(180deg);font-size:11px;letter-spacing:.28em;padding-bottom:8px">STEP</span>
               <span class="ep-num" style="margin-left:16px;font-size:clamp(54px,11vh,128px)">04</span>
             </div>
             <div style="max-width:430px">
@@ -956,7 +970,7 @@ a[id^="faqtile"]{width:50%!important}
           <img id="frot2" src="assets/aa4224f8-c3a1-4f08-9a7b-8e1352962c56.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1s">
         </div>
       </div>
-      <div style="width:87.5%;margin:auto;border-top:1px solid rgba(0,0,0,.25)">
+      <div class="ft-legal" style="width:87.5%;margin:auto;border-top:1px solid rgba(0,0,0,.25)">
         <div style="display:flex;justify-content:space-between;align-items:center;padding:26px 0 34px">
           <div style="display:flex;gap:30px">
             <a href="#" style="font-size:11px">Trade Law</a>
@@ -1443,23 +1457,9 @@ document.addEventListener('DOMContentLoaded',()=>{ new Site().init(); });
           });
         }
 
-        /* ---------- (4) Product cards: horizontal slide-in (desktop) ---------- */
-        var cards = gsap.utils.toArray(".pcard");
-        if (cards.length) {
-          if (isDesktop) {
-            gsap.from(cards, {
-              xPercent: 8, autoAlpha: 0, duration: 0.9, ease: "power3.out",
-              stagger: 0.12, clearProps: REVEAL_CLEAR,
-              scrollTrigger: { trigger: cards[0], start: "top 80%", once: true }
-            });
-          } else {
-            gsap.from(cards, {
-              y: 30, autoAlpha: 0, duration: 0.8, ease: "power2.out", stagger: 0.1,
-              clearProps: REVEAL_CLEAR,
-              scrollTrigger: { trigger: cards[0], start: "top 85%", once: true }
-            });
-          }
-        }
+        /* The four Moodcap cards deliberately have no scroll-in entrance: they
+           are the product itself and read better simply present. Their row keeps
+           overflow:hidden below purely as a guard, not for an animation. */
 
         /* ---------- (3) Parallax — desktop only ---------- */
         if (isDesktop) {
