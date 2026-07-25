@@ -277,17 +277,33 @@ body{overflow-x:clip}
 .cs-row{flex-direction:column!important;margin-top:60px!important}
 .cs-row>div{border-right:none!important;border-bottom:1px solid #3c2a1c!important;padding:40px 0!important}
 .cs-row>div:last-child{border-bottom:none!important}
-[data-secret="1"]{font-size:20px!important}
+/* 20px left this section's main statement the same size as body copy elsewhere,
+   which is most of why it read as faint. Fluid so it scales with the viewport. */
+[data-secret="1"]{font-size:clamp(26px,7.4vw,32px)!important}
+/* The break is dropped so the line can reflow. display:none removes the break
+   without leaving a space, so the markup carries one before the <br> -- that is
+   what turned "are only" into "areonly" here. */
 [data-secret="1"] br{display:none!important}
-[data-secret="2"]{font-size:12px!important;line-height:2!important}
+/* 12px in #8a7d6b measured 3.38:1 against the cream ground; ink-soft clears 4.5. */
+[data-secret="2"]{font-size:13px!important;line-height:1.95!important;color:#54493c!important}
 [data-screen-label="Our Story"]{padding:140px 0 460px!important}
 .story-row{flex-direction:column!important;gap:36px!important}
 .story-row>div{width:100%!important}
 .story-row>div>p:first-child{font-size:28px!important}
 .story-row>div>p:nth-child(2){margin-top:36px!important}
-[data-screen-label="Our Story"]>div:nth-child(2)>div:nth-child(1){width:45vw!important}
-[data-screen-label="Our Story"]>div:nth-child(2)>div:nth-child(2){display:none!important}
-[data-screen-label="Our Story"]>div:nth-child(2)>div:nth-child(3){width:45vw!important;bottom:120px!important}
+/* The decorative collage is absolutely positioned for a desktop layout, so on a
+   narrow screen its photo stacks land on top of the body copy — measured up to
+   125px of overlap on two paragraphs. Shrinking it to 45vw (the previous rule)
+   kept the collision, so it is hidden outright here. The eight-layer backdrop
+   still carries the section's atmosphere, and the infographic still sits in the
+   content column, so nothing is really lost. */
+[data-screen-label="Our Story"]>div:nth-child(2){display:none!important}
+/* The diagram is sized from its height, which forces a width wider than the
+   narrow content column and gets it clipped by the section's overflow. Drive it
+   from the width instead so the whole diagram stays visible. */
+[data-screen-label="Our Story"] img[alt="routine"]{width:100%!important;height:auto!important}
+[data-screen-label="Our Story"] img[alt="routine"]:only-child,
+[data-screen-label="Our Story"] div:has(>img[alt="routine"]){max-width:100%!important;aspect-ratio:auto!important}
 .ep-row{flex-direction:column!important;gap:30px!important}
 .ep-row>div{width:100%!important}
 .ep-row p:first-child{font-size:24px!important}
@@ -305,7 +321,7 @@ a[id^="faqtile"]{width:50%!important}
 .ft-main nav{width:100%!important}
 .spec-row{flex-direction:column!important}
 .spec-row>div:first-child{width:100%!important}
-#spec-modal>div,#faq-modal>div,#gal-modal>div{padding:40px 24px 30px!important}
+#spec-modal>div,#faq-modal>div{padding:40px 24px 30px!important}
 }
 @keyframes main_scroll{0%{transform-origin:left;transform:scaleX(0)}22%{transform-origin:left;transform:scaleX(1)}23%{transform-origin:right;transform:scaleX(1)}45%,to{transform-origin:right;transform:scaleX(0)}}
 :root{--bg:#f0ebe0;--bg-card:#f8f3e8;--ink:#3c2a1c;--ink-soft:#54493c;--ink-muted:#8a7d6b;--accent:#352c1e;--accent-soft:#b8a78a;--line:rgba(50,40,25,0.13);--line-strong:rgba(50,40,25,0.28)}
@@ -555,8 +571,8 @@ a[id^="faqtile"]{width:50%!important}
         </div>
       <div class="rec-bar" style="display:flex;justify-content:space-between;align-items:center;position:absolute;bottom:60px;left:0;right:0;padding-left:6.25%;padding-right:4.6875%;z-index:5">
         <div style="display:flex;gap:20px">
-          <button id="recnav0" style="display:flex;justify-content:center;align-items:center;width:21px;height:21px;border-radius:50%;border:1px solid currentColor;background:#3c2a1c;color:#fff;font-size:11px;line-height:1;cursor:pointer;padding:0;font-family:inherit;transition:background-color .15s,color .15s"><span style="display:block;font-variant-numeric:lining-nums;font-feature-settings:'lnum' 1,'tnum' 1">1</span></button>
-          <button id="recnav1" style="display:flex;justify-content:center;align-items:center;width:21px;height:21px;border-radius:50%;border:1px solid currentColor;background:#fff;color:#3c2a1c;font-size:11px;line-height:1;cursor:pointer;padding:0;font-family:inherit;transition:background-color .15s,color .15s"><span style="display:block;font-variant-numeric:lining-nums;font-feature-settings:'lnum' 1,'tnum' 1">2</span></button>
+          <button id="recnav0" style="display:flex;justify-content:center;align-items:center;width:21px;height:21px;border-radius:50%;border:1px solid currentColor;background:#fff;color:#3c2a1c;font-size:11px;line-height:1;cursor:pointer;padding:0;font-family:inherit;transition:background-color .15s,color .15s"><span style="display:block;font-variant-numeric:lining-nums;font-feature-settings:'lnum' 1,'tnum' 1">1</span></button>
+          <button id="recnav1" style="display:flex;justify-content:center;align-items:center;width:21px;height:21px;border-radius:50%;border:1px solid currentColor;background:transparent;color:#3c2a1c;font-size:11px;line-height:1;cursor:pointer;padding:0;font-family:inherit;transition:background-color .15s,color .15s"><span style="display:block;font-variant-numeric:lining-nums;font-feature-settings:'lnum' 1,'tnum' 1">2</span></button>
         </div>
       </div>
     </div>
@@ -566,7 +582,7 @@ a[id^="faqtile"]{width:50%!important}
       <div class="pcard" style="position:relative;width:25%;box-sizing:border-box;padding:70px 0;border-right:1px solid #3c2a1c"><div class="pcard-bg"><img src="assets/4619110c-eb2d-4233-832a-b3328984c422.jpg" alt="" style="width:100%;height:100%;object-fit:cover"></div>
         <p style="margin: 0; text-align: center; font-size: 18px; line-height: 1.33; font-family: EB Garamond">Flow Boost</p>
         <p style="margin: 8px 0 0; text-align: center; font-size: 14px; font-family: EB Garamond">no.1</p>
-        <div style="width:58.5%;margin:30px auto 0;aspect-ratio:500/672;overflow:hidden"><a href="#" data-gallery="assets/product_5_kikii.jpg,assets/product_7_kikii.jpg,assets/product_15_kikii.jpg" data-gallery-title="Flow Boost no.1" style="display:block;height:100%"><img src="assets/46e09caa-13f9-48d2-87d4-5342826154e0.jpg" alt="Shampoo kikii" style="width:100%;height:100%;object-fit:cover;transition:transform .72s cubic-bezier(.165,.84,.44,1)" class="hv16"></a></div>
+        <div style="width:58.5%;margin:30px auto 0;aspect-ratio:500/672;overflow:hidden"><div style="display:block;height:100%"><img src="assets/46e09caa-13f9-48d2-87d4-5342826154e0.jpg" alt="Flow Boost" style="width:100%;height:100%;object-fit:cover;transition:transform .72s cubic-bezier(.165,.84,.44,1)" class="hv16"></div></div>
         <p style="margin: 27px auto 0; width: 58.5%; text-align: center; font-size: 12px; line-height: 1.8">快速進入專注與高效執行</p>
         <div style="width:58.5%;margin:16px auto 0;border-top:1px solid color-mix(in srgb,currentColor 25%,transparent)"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:8px 0;border-bottom:1px solid color-mix(in srgb,currentColor 25%,transparent)"><span style="font-size:10px;opacity:.5;letter-spacing:.2em">前調</span><span style="font-size:11px">葡萄柚、佛手柑、檸檬</span></div><div style="display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:8px 0;border-bottom:1px solid color-mix(in srgb,currentColor 25%,transparent)"><span style="font-size:10px;opacity:.5;letter-spacing:.2em">中調</span><span style="font-size:11px">迷迭香、胡椒薄荷</span></div><div style="display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:8px 0;border-bottom:1px solid color-mix(in srgb,currentColor 25%,transparent)"><span style="font-size:10px;opacity:.5;letter-spacing:.2em">後調</span><span style="font-size:11px">黑胡椒、粉紅胡椒</span></div></div>
         
@@ -574,7 +590,7 @@ a[id^="faqtile"]{width:50%!important}
       <div class="pcard" style="position:relative;width:25%;box-sizing:border-box;padding:70px 0;border-right:1px solid #3c2a1c"><div class="pcard-bg"><img src="assets/e4c8c81e-2da9-41d6-93a2-3db9d2ec9218.jpg" alt="" style="width:100%;height:100%;object-fit:cover"></div>
         <p style="margin:0;text-align:center;font-size:18px;line-height:1.33">Ground Calm</p>
         <p style="margin: 8px 0 0; text-align: center; font-size: 14px; font-family: EB Garamond">no.2</p>
-        <div style="width:58.5%;margin:30px auto 0;aspect-ratio:500/672;overflow:hidden"><a href="#" data-gallery="assets/product_17_kikii.jpg,assets/product_16_emuu.jpg,assets/product_19_emuu.jpg" data-gallery-title="Ground Calm no.2" style="display:block;height:100%"><img src="assets/aa6d41e3-52cf-4805-9b49-839ddad690e0.jpg" alt="Treatment kikii" style="width:100%;height:100%;object-fit:cover;transition:transform .72s cubic-bezier(.165,.84,.44,1)" class="hv17"></a></div>
+        <div style="width:58.5%;margin:30px auto 0;aspect-ratio:500/672;overflow:hidden"><div style="display:block;height:100%"><img src="assets/aa6d41e3-52cf-4805-9b49-839ddad690e0.jpg" alt="Ground Calm" style="width:100%;height:100%;object-fit:cover;transition:transform .72s cubic-bezier(.165,.84,.44,1)" class="hv17"></div></div>
         <p style="margin: 27px auto 0; width: 58.5%; text-align: center; font-size: 12px; line-height: 1.8">從長期緊繃回到踏實安全感</p>
         <div style="width:58.5%;margin:16px auto 0;border-top:1px solid color-mix(in srgb,currentColor 25%,transparent)"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:8px 0;border-bottom:1px solid color-mix(in srgb,currentColor 25%,transparent)"><span style="font-size:10px;opacity:.5;letter-spacing:.2em">前調</span><span style="font-size:11px">佛手柑、苦橙葉</span></div><div style="display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:8px 0;border-bottom:1px solid color-mix(in srgb,currentColor 25%,transparent)"><span style="font-size:10px;opacity:.5;letter-spacing:.2em">中調</span><span style="font-size:11px">真正薰衣草、洋甘菊</span></div><div style="display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:8px 0;border-bottom:1px solid color-mix(in srgb,currentColor 25%,transparent)"><span style="font-size:10px;opacity:.5;letter-spacing:.2em">後調</span><span style="font-size:11px">雪松、檀香、鳶尾根</span></div></div>
         
@@ -582,7 +598,7 @@ a[id^="faqtile"]{width:50%!important}
       <div class="pcard" style="position:relative;width:25%;box-sizing:border-box;padding:70px 0;border-right:1px solid #3c2a1c"><div class="pcard-bg"><img src="assets/84e132a5-475e-4bb2-97e0-793057289ac6.jpg" alt="" style="width:100%;height:100%;object-fit:cover"></div>
         <p style="margin:0;text-align:center;font-size:18px;line-height:1.33">Think Reset</p>
         <p style="margin:8px 0 0;text-align:center;font-size:14px">no.3</p>
-        <div style="width:58.5%;margin:30px auto 0;aspect-ratio:500/672;overflow:hidden"><a href="#" data-gallery="assets/product_8_moist.jpg,assets/product_9_silky.jpg,assets/product_3.jpg" data-gallery-title="Think Reset no.3" style="display:block;height:100%"><img src="assets/3489a05c-045a-455e-914f-58bf99b53b53.jpg" alt="Charme moist" style="width:100%;height:100%;object-fit:cover;transition:transform .72s cubic-bezier(.165,.84,.44,1)" class="hv18"></a></div>
+        <div style="width:58.5%;margin:30px auto 0;aspect-ratio:500/672;overflow:hidden"><div style="display:block;height:100%"><img src="assets/3489a05c-045a-455e-914f-58bf99b53b53.jpg" alt="Think Reset" style="width:100%;height:100%;object-fit:cover;transition:transform .72s cubic-bezier(.165,.84,.44,1)" class="hv18"></div></div>
         <p style="margin: 27px auto 0; width: 58.5%; text-align: center; font-size: 12px; line-height: 1.8">讓過度思考停止內耗</p>
         <div style="width:58.5%;margin:16px auto 0;border-top:1px solid color-mix(in srgb,currentColor 25%,transparent)"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:8px 0;border-bottom:1px solid color-mix(in srgb,currentColor 25%,transparent)"><span style="font-size:10px;opacity:.5;letter-spacing:.2em">前調</span><span style="font-size:11px">佛手柑、苦橙葉</span></div><div style="display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:8px 0;border-bottom:1px solid color-mix(in srgb,currentColor 25%,transparent)"><span style="font-size:10px;opacity:.5;letter-spacing:.2em">中調</span><span style="font-size:11px">阿曼乳香、甜羅勒</span></div><div style="display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:8px 0;border-bottom:1px solid color-mix(in srgb,currentColor 25%,transparent)"><span style="font-size:10px;opacity:.5;letter-spacing:.2em">後調</span><span style="font-size:11px">岩蘭草、檀香、雪松</span></div></div>
         
@@ -590,7 +606,7 @@ a[id^="faqtile"]{width:50%!important}
       <div class="pcard" style="position:relative;width:25%;padding:70px 0"><div class="pcard-bg"><img src="assets/54b64041-6294-4cc3-8c09-4160952a677d.jpg" alt="" style="width:100%;height:100%;object-fit:cover"></div>
         <p style="margin:0;text-align:center;font-size:18px;line-height:1.33">Heart Balance</p>
         <p style="margin:8px 0 0;text-align:center;font-size:14px">no.4</p>
-        <div style="width:58.5%;margin:30px auto 0;aspect-ratio:500/672;overflow:hidden"><a href="#" data-gallery="assets/product_11.jpg,assets/product_22.jpg,assets/product_25.jpg" data-gallery-title="Heart Balance no.4" style="display:block;height:100%"><img src="assets/8ffe661d-4865-4fa1-9021-34fa117d4c35.jpg" alt="Natural Oil" style="width:100%;height:100%;object-fit:cover;transition:transform .72s cubic-bezier(.165,.84,.44,1)" class="hv19"></a></div>
+        <div style="width:58.5%;margin:30px auto 0;aspect-ratio:500/672;overflow:hidden"><div style="display:block;height:100%"><img src="assets/8ffe661d-4865-4fa1-9021-34fa117d4c35.jpg" alt="Heart Balance" style="width:100%;height:100%;object-fit:cover;transition:transform .72s cubic-bezier(.165,.84,.44,1)" class="hv19"></div></div>
         <p style="margin: 27px auto 0; width: 58.5%; text-align: center; font-size: 12px; line-height: 1.8">情緒下班，大腦入睡</p>
         <div style="width:58.5%;margin:16px auto 0;border-top:1px solid color-mix(in srgb,currentColor 25%,transparent)"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:8px 0;border-bottom:1px solid color-mix(in srgb,currentColor 25%,transparent)"><span style="font-size:10px;opacity:.5;letter-spacing:.2em">前調</span><span style="font-size:11px">甜橙、尤加利、茶樹</span></div><div style="display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:8px 0;border-bottom:1px solid color-mix(in srgb,currentColor 25%,transparent)"><span style="font-size:10px;opacity:.5;letter-spacing:.2em">中調</span><span style="font-size:11px">真正薰衣草、草本花香</span></div><div style="display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:8px 0;border-bottom:1px solid color-mix(in srgb,currentColor 25%,transparent)"><span style="font-size:10px;opacity:.5;letter-spacing:.2em">後調</span><span style="font-size:11px">雪松、柏木、乾燥木質</span></div></div>
         
@@ -606,7 +622,7 @@ a[id^="faqtile"]{width:50%!important}
           <span style="font-size:11px;letter-spacing:.32em;color:#8a7d6b">( WHAT’S NEXT )</span>
           <span style="width:44px;height:1px;background:#3c2a1c;opacity:.35"></span>
         </div>
-        <p data-secret="1" style="margin:0;font-size:40px;line-height:1.35;text-wrap:pretty;font-family:'EB Garamond',&quot;Yu Mincho&quot;,&quot;YuMincho&quot;,&quot;游明朝&quot;,&quot;Hiragino Mincho ProN&quot;,&quot;Noto Serif TC&quot;,serif">Four moods are<br>only the beginning.</p>
+        <p data-secret="1" style="margin:0;font-size:40px;line-height:1.35;text-wrap:pretty;font-family:'EB Garamond',&quot;Yu Mincho&quot;,&quot;YuMincho&quot;,&quot;游明朝&quot;,&quot;Hiragino Mincho ProN&quot;,&quot;Noto Serif TC&quot;,serif">Four moods are <br>only the beginning.</p>
         <p data-secret="2" style="margin:26px 0 0;font-size:15px;letter-spacing:.08em;line-height:2;color:#8a7d6b">四種情緒，只是開始。<br>未來還有更多正在路上。</p>
       </div>
       <div class="cs-row" style="display:flex;max-width:1120px;margin:96px auto 0;border-top:1px solid #3c2a1c;border-bottom:1px solid #3c2a1c">
@@ -835,20 +851,6 @@ a[id^="faqtile"]{width:50%!important}
   </section>
 
   <!-- FOOTER -->
-  <div id="gal-modal" style="position: fixed; inset: 0; z-index: 208; display: flex; justify-content: center; align-items: center; background: rgba(0,0,0,.45); opacity: 0; pointer-events: none; transition: opacity .3s">
-    <div style="position: relative; width: min(460px,88vw); max-height: 82vh; overflow: auto; background: #fff; border: 1px solid #3c2a1c; padding: 40px 40px 30px">
-      <button id="gal-close" style="position:absolute;top:18px;right:18px;width:34px;height:34px;border:1px solid #3c2a1c;border-radius:50%;background:#fff;color:#3c2a1c;font-family:inherit;font-size:14px;cursor:pointer">×</button>
-      <h3 id="gal-title" style="margin:0;font-size:20px;font-weight:400">( Gallery )</h3>
-      <div style="margin-top:26px;aspect-ratio:500/672;max-height:52vh;overflow:hidden">
-        <img id="gal-img" src="assets/b3712997-8155-407a-b7bc-01e7f25a6b6d.jpg" alt="Gallery image" style="width:100%;height:100%;object-fit:cover;transition:opacity .2s">
-      </div>
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:20px">
-        <button id="gal-prev" style="display:flex;justify-content:center;align-items:center;width:34px;height:34px;border:1px solid #3c2a1c;border-radius:50%;background:#fff;color:#3c2a1c;font-family:inherit;font-size:13px;cursor:pointer;transition:background-color 80ms,color 80ms">←</button>
-        <p id="gal-count" style="margin:0;font-size:12px;letter-spacing:.15em">1 / 3</p>
-        <button id="gal-next" style="display:flex;justify-content:center;align-items:center;width:34px;height:34px;border:1px solid #3c2a1c;border-radius:50%;background:#fff;color:#3c2a1c;font-family:inherit;font-size:13px;cursor:pointer;transition:background-color 80ms,color 80ms">→</button>
-      </div>
-    </div>
-  </div>
   <div id="spec-modal" style="position: fixed; inset: 0; z-index: 205; display: flex; justify-content: center; align-items: center; background: rgba(0,0,0,.45); opacity: 0; pointer-events: none; transition: opacity .3s">
     <div style="position: relative; width: min(880px,92vw); max-height: 82vh; overflow: auto; background: #fff; border: 1px solid #3c2a1c; padding: 50px 50px 40px">
       <button id="spec-close" style="position:absolute;top:18px;right:18px;width:34px;height:34px;border:1px solid #3c2a1c;border-radius:50%;background:#fff;color:#3c2a1c;font-family:inherit;font-size:14px;cursor:pointer;transition:background-color 80ms,color 80ms" class="hv23">×</button>
@@ -1189,42 +1191,6 @@ class Site {
       }
     });
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setVideoModal(false); });
-    // product image gallery lightbox
-    this.gal = { srcs: [], i: 0 };
-    const galModal = () => document.getElementById('gal-modal');
-    const galShow = () => {
-      const img = document.getElementById('gal-img');
-      const cnt = document.getElementById('gal-count');
-      if (img) { img.style.opacity = '0'; setTimeout(() => { img.src = this.gal.srcs[this.gal.i]; img.style.opacity = '1'; }, 120); }
-      if (cnt) cnt.textContent = (this.gal.i + 1) + ' / ' + this.gal.srcs.length;
-    };
-    const galOpen = (open) => { const m = galModal(); if (m) { m.style.opacity = open ? '1' : '0'; m.style.pointerEvents = open ? 'auto' : 'none'; } };
-    document.addEventListener('click', (e) => {
-      const trig = e.target.closest && e.target.closest('[data-gallery]');
-      if (trig) {
-        e.preventDefault();
-        this.gal.srcs = trig.getAttribute('data-gallery').split(',');
-        this.gal.i = 0;
-        const t = document.getElementById('gal-title');
-        if (t) t.textContent = '( ' + (trig.getAttribute('data-gallery-title') || 'Gallery') + ' )';
-        const img = document.getElementById('gal-img');
-        if (img) { img.src = this.gal.srcs[0]; img.style.opacity = '1'; }
-        const cnt = document.getElementById('gal-count');
-        if (cnt) cnt.textContent = '1 / ' + this.gal.srcs.length;
-        galOpen(true); return;
-      }
-      if (e.target.closest && e.target.closest('#gal-prev')) { this.gal.i = (this.gal.i - 1 + this.gal.srcs.length) % this.gal.srcs.length; galShow(); return; }
-      if (e.target.closest && e.target.closest('#gal-next')) { this.gal.i = (this.gal.i + 1) % this.gal.srcs.length; galShow(); return; }
-      if ((e.target.closest && e.target.closest('#gal-close')) || e.target.id === 'gal-modal') galOpen(false);
-    });
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') galOpen(false);
-      const m = galModal();
-      if (m && m.style.opacity === '1') {
-        if (e.key === 'ArrowLeft') { this.gal.i = (this.gal.i - 1 + this.gal.srcs.length) % this.gal.srcs.length; galShow(); }
-        if (e.key === 'ArrowRight') { this.gal.i = (this.gal.i + 1) % this.gal.srcs.length; galShow(); }
-      }
-    });
   }
   startKv() {
     clearInterval(this.kvTimer);
@@ -1264,8 +1230,13 @@ class Site {
       if (s) { s.style.opacity = k === i ? '1' : '0'; s.style.pointerEvents = k === i ? 'auto' : 'none'; }
       const nav = document.getElementById('recnav' + k);
       if (nav) {
-        nav.style.background = k === i ? '#3c2a1c' : '#fff';
-        nav.style.color = k === i ? '#fff' : '#3c2a1c';
+        /* Same convention as the KV dots: a solid white disc marks the current
+           slide, an outline marks the others. Previously this was inverted --
+           white meant "current" in the hero but "not current" here.
+           These sit over a light sandy photo, so the outline is drawn in ink;
+           the KV dots sit over dark video and draw theirs in white. */
+        nav.style.background = k === i ? '#fff' : 'transparent';
+        nav.style.color = '#3c2a1c';
       }
     }
   }
@@ -1444,17 +1415,29 @@ document.addEventListener('DOMContentLoaded',()=>{ new Site().init(); });
             }
           });
 
-          /* An image that never reappears is far worse than one that never
-             animates, so force-show anything still hidden once the page has
-             settled (covers nodes whose trigger cannot resolve, e.g. inside a
-             clipped or transformed ancestor). */
-          gsap.delayedCall(3, function () {
-            photos.forEach(function (el) {
-              if (Number(gsap.getProperty(el, "opacity")) === 0) {
-                gsap.set(el, { autoAlpha: 1, clearProps: "opacity,visibility" });
-              }
-            });
-          });
+          /* Backstop: a photo must never stay invisible while it is on screen,
+             for nodes whose ScrollTrigger cannot resolve (clipped or transformed
+             ancestors). This is deliberately NOT a timer. A timed sweep fires
+             while the viewer is still on the hero -- the preloader alone covers
+             the first few seconds -- and reveals every photo below the fold
+             before it is ever reached, so scrolling down shows no fade at all.
+             Keyed on visibility instead: the 0.5 threshold sits well after
+             ScrollTrigger's "top 92%", so this only acts when that failed. */
+          if ("IntersectionObserver" in window) {
+            var rescue = new IntersectionObserver(function (entries) {
+              entries.forEach(function (e) {
+                if (!e.isIntersecting) return;
+                if (Number(gsap.getProperty(e.target, "opacity")) === 0) {
+                  gsap.to(e.target, {
+                    autoAlpha: 1, duration: 0.6, ease: "power2.out",
+                    overwrite: "auto", clearProps: "opacity,visibility"
+                  });
+                }
+                rescue.unobserve(e.target);
+              });
+            }, { threshold: 0.5 });
+            photos.forEach(function (el) { rescue.observe(el); });
+          }
         }
 
         /* The four Moodcap cards deliberately have no scroll-in entrance: they
