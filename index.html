@@ -236,20 +236,30 @@ img,video{display:block}
 .pcard:nth-child(2){border-right:none!important}
 .h2-big{font-size:32px!important}
 .ep-num{font-size:84px!important}
+/* How to use — tablet/mobile: vertical steps instead of sticky horizontal stack */
+#howto>div:last-child{margin-bottom:0!important}
+#howto>div:last-child>div{position:static!important;height:auto!important;padding-top:0!important;margin-bottom:16px!important}
+#ep0,#ep1,#ep2,#ep3{flex-direction:column!important;height:auto!important}
+#ep0>div:first-child,#ep1>div:first-child,#ep2>div:first-child,#ep3>div:first-child{width:100%!important;flex:none!important;padding:32px 6.25%!important;gap:22px!important}
+#ep0>div:nth-child(2),#ep1>div:nth-child(2),#ep2>div:nth-child(2),#ep3>div:nth-child(2){width:100%!important;flex:none!important;border-left:none!important;border-top:1px solid #3c2a1c!important;height:min(78vw,460px)!important;padding:28px!important}
+#eplabel0,#eplabel1,#eplabel2,#eplabel3{display:none!important}
+/* Philosophy — tablet/mobile: drop the floating collage, show one clean image below the text */
+[data-screen-label="Philosophy"]{padding:120px 0 80px!important}
+[data-screen-label="Philosophy"]>div:nth-child(2){position:static!important;width:100%!important;height:auto!important;pointer-events:auto!important}
+[data-screen-label="Philosophy"]>div:nth-child(2)>div{display:none!important}
+[data-screen-label="Philosophy"]>div:nth-child(2)>div:nth-child(1){display:block!important;position:relative!important;inset:auto!important;width:87.5%!important;max-width:520px!important;margin:52px auto 0!important}
+/* Footer — tablet/mobile: stack, and make the rotating photo full width */
+.ft-main{flex-direction:column!important;gap:50px!important;padding:72px 0 60px!important}
+.ft-main nav{width:100%!important}
+.ft-main>div:last-child{width:100%!important;aspect-ratio:4/5!important;max-height:60vh!important}
 }
 @media (max-width:680px){
 body{overflow-x:clip}
 .mid-nav,.hd-tag{display:none!important}
 #p-campaign p{font-size:14px!important}
-[data-screen-label="Philosophy"]{padding:120px 0 780px!important}
 .phi-row{flex-direction:column!important;gap:44px!important}
 .phi-row>p:first-child{font-size:28px!important}
 .phi-row>p:last-child{width:100%!important}
-[data-screen-label="Philosophy"]>div:nth-child(2)>div:nth-child(1){width:84%!important;bottom:340px!important}
-[data-screen-label="Philosophy"]>div:nth-child(2)>div:nth-child(2){width:130px!important;bottom:660px!important}
-[data-screen-label="Philosophy"]>div:nth-child(2)>div:nth-child(3),
-[data-screen-label="Philosophy"]>div:nth-child(2)>div:nth-child(4),
-[data-screen-label="Philosophy"]>div:nth-child(2)>div:nth-child(5){display:none!important}
 [data-screen-label="Brand Video"]{padding:100px 0 160px!important}
 .bv-row{gap:24px!important}
 .bv-row>p{height:260px!important;font-size:12px!important}
