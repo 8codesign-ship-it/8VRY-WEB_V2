@@ -219,7 +219,6 @@ img,video{display:block}
 @keyframes loop_left{0%{transform:translateZ(0)}to{transform:translate3d(-100%,0,0)}}
 @keyframes loop_right{0%{transform:translate3d(-100%,0,0)}to{transform:translateZ(0)}}
 @keyframes badge_rotate{0%{transform:rotate(0)}18%,to{transform:rotate(360deg)}}
-#ugc-marquee:hover .ugc-track{animation-play-state:paused}
 .pcard{transition:color .6s}
 .pcard:hover{color:#fff}
 .pcard .pcard-bg{position:absolute;inset:0;z-index:-1;opacity:0;transition:opacity .6s}
@@ -498,10 +497,10 @@ a[id^="faqtile"]{width:50%!important}
         <p style="margin: 60px 0 0; font-family: 'Homemade Apple',cursive; font-size: 12px; opacity: .75">a pocket ritual, worn into the day.</p>
       </div>
     </div>
-    <div id="video-modal" style="position: fixed; inset: 0; z-index: 210; display: none; justify-content: center; align-items: center; background: rgba(0,0,0,.72); opacity: 0; pointer-events: none; transition: opacity .3s">
+    <div id="video-modal" style="position: fixed; inset: 0; z-index: 210; display: flex; justify-content: center; align-items: center; background: rgba(0,0,0,.72); opacity: 0; pointer-events: none; transition: opacity .3s">
       <div style="position:relative;width:min(420px,80vw)">
         <button id="video-modal-close" style="position:absolute;top:-46px;right:0;width:34px;height:34px;border:1px solid #fff;border-radius:50%;background:transparent;color:#fff;font-family:inherit;font-size:14px;cursor:pointer;transition:background-color 80ms,color 80ms" class="hv13">×</button>
-        <video id="video-modal-player" src="assets/9e640316-d3bf-45a3-976d-458af07d9f25.mp4" controls="controls" muted="muted" playsinline="playsinline" style="width: 100%; display: none; aspect-ratio: 3/4; object-fit: cover; background: #3c2a1c"></video>
+        <video id="video-modal-player" src="assets/9e640316-d3bf-45a3-976d-458af07d9f25.mp4" controls="controls" muted="muted" playsinline="playsinline" style="width: 100%; display: block; aspect-ratio: 3/4; object-fit: cover; background: #3c2a1c"></video>
       </div>
     </div>
     <div style="margin-bottom:80px;text-align:center">
@@ -903,30 +902,30 @@ a[id^="faqtile"]{width:50%!important}
     </div>
     <div class="faq-tiles" style="display:flex;justify-content:space-between;align-items:stretch;position:relative;border-top:1px solid #3c2a1c;border-bottom:1px solid #3c2a1c">
       <a href="#" id="faqtile0" style="position:relative;width:20%;aspect-ratio:512/660;overflow:hidden;display:block">
-        <img src="assets/81569231-7a8e-4f55-b7bc-8a53175d4988.jpg" alt="FAQ" style="width:100%;height:100%;object-fit:cover;transition:transform .55s cubic-bezier(.215,.61,.355,1)" class="hv25"><div style="position:absolute;inset:0;background:linear-gradient(rgba(40,28,18,0.22),rgba(40,28,18,0.46));pointer-events:none"></div>
+        <img src="assets/4619110c-eb2d-4233-832a-b3328984c422.jpg" alt="FAQ" style="width:100%;height:100%;object-fit:cover;transition:transform .55s cubic-bezier(.215,.61,.355,1)" class="hv25"><div style="position:absolute;inset:0;background:linear-gradient(rgba(40,28,18,0.22),rgba(40,28,18,0.46));pointer-events:none"></div>
         <span style="position:absolute;top:50%;transform:translateY(-50%);left:0;width:100%;text-align:center;color:#fff;font-size:12px;pointer-events:none">產品 FAQ</span>
       </a>
       <a href="#" id="faqtile1" style="position:relative;width:20%;aspect-ratio:512/660;overflow:hidden;display:block">
-        <img src="assets/6fff6d73-a0bd-46ee-a1c5-75a17c55f33b.jpg" alt="Delivery" style="width:100%;height:100%;object-fit:cover;transition:transform .55s cubic-bezier(.215,.61,.355,1)" class="hv26"><div style="position:absolute;inset:0;background:linear-gradient(rgba(40,28,18,0.22),rgba(40,28,18,0.46));pointer-events:none"></div>
+        <img src="assets/84e132a5-475e-4bb2-97e0-793057289ac6.jpg" alt="Delivery" style="width:100%;height:100%;object-fit:cover;transition:transform .55s cubic-bezier(.215,.61,.355,1)" class="hv26"><div style="position:absolute;inset:0;background:linear-gradient(rgba(40,28,18,0.22),rgba(40,28,18,0.46));pointer-events:none"></div>
         <span style="position:absolute;top:50%;transform:translateY(-50%);left:0;width:100%;text-align:center;color:#fff;font-size:12px;pointer-events:none">運送 FAQ</span>
       </a>
       <a href="#" id="faqtile2" style="position:relative;width:20%;aspect-ratio:512/660;overflow:hidden;display:block">
-        <img src="assets/01141443-a1a5-46da-92e2-82a1f2b30861.jpg" alt="Stockist" style="width:100%;height:100%;object-fit:cover;transition:transform .55s cubic-bezier(.215,.61,.355,1)" class="hv27"><div style="position:absolute;inset:0;background:linear-gradient(rgba(40,28,18,0.22),rgba(40,28,18,0.46));pointer-events:none"></div>
+        <img src="assets/e4c8c81e-2da9-41d6-93a2-3db9d2ec9218.jpg" alt="Stockist" style="width:100%;height:100%;object-fit:cover;transition:transform .55s cubic-bezier(.215,.61,.355,1)" class="hv27"><div style="position:absolute;inset:0;background:linear-gradient(rgba(40,28,18,0.22),rgba(40,28,18,0.46));pointer-events:none"></div>
         <span style="position:absolute;top:50%;transform:translateY(-50%);left:0;width:100%;text-align:center;color:#fff;font-size:12px;pointer-events:none">募資 FAQ</span>
       </a>
       <a href="#" id="faqtile3" style="position:relative;width:20%;aspect-ratio:512/660;overflow:hidden;display:block">
-        <img src="assets/aa4224f8-c3a1-4f08-9a7b-8e1352962c56.jpg" alt="Returns and Exchanges" style="width:100%;height:100%;object-fit:cover;transition:transform .55s cubic-bezier(.215,.61,.355,1)" class="hv28"><div style="position:absolute;inset:0;background:linear-gradient(rgba(40,28,18,0.22),rgba(40,28,18,0.46));pointer-events:none"></div>
+        <img src="assets/6c938b5a-4eea-46a4-9ae7-0e9f9c9ab6f5.jpg" alt="Returns and Exchanges" style="width:100%;height:100%;object-fit:cover;transition:transform .55s cubic-bezier(.215,.61,.355,1)" class="hv28"><div style="position:absolute;inset:0;background:linear-gradient(rgba(40,28,18,0.22),rgba(40,28,18,0.46));pointer-events:none"></div>
         <span style="position:absolute;top:50%;transform:translateY(-50%);left:0;width:100%;text-align:center;color:#fff;font-size:12px;pointer-events:none">保固與售後 FAQ</span>
       </a>
       <a href="#" id="faqtile4" style="position:relative;width:20%;aspect-ratio:512/660;overflow:hidden;display:block">
-        <img src="assets/f4810c35-3b32-4992-bb2f-5664a24291f7.jpg" alt="Company" style="width:100%;height:100%;object-fit:cover;transition:transform .55s cubic-bezier(.215,.61,.355,1)" class="hv29"><div style="position:absolute;inset:0;background:linear-gradient(rgba(40,28,18,0.22),rgba(40,28,18,0.46));pointer-events:none"></div>
+        <img src="assets/54b64041-6294-4cc3-8c09-4160952a677d.jpg" alt="Company" style="width:100%;height:100%;object-fit:cover;transition:transform .55s cubic-bezier(.215,.61,.355,1)" class="hv29"><div style="position:absolute;inset:0;background:linear-gradient(rgba(40,28,18,0.22),rgba(40,28,18,0.46));pointer-events:none"></div>
         <span style="position:absolute;top:50%;transform:translateY(-50%);left:0;width:100%;text-align:center;color:#fff;font-size:12px;pointer-events:none">公司介紹</span>
       </a>
     </div>
     <div data-screen-label="Mood Marquee" style="overflow:hidden;padding:140px 0 40px">
       <div style="display:flex;white-space:nowrap">
-        <div style="display:flex;animation:loop_right 55s linear infinite"><div style="flex:none;width:226px;margin-left:50px"><img src="assets/f4810c35-3b32-4992-bb2f-5664a24291f7.jpg" alt="" style="width:100%;height:300px;object-fit:cover;display:block"></div><span style="flex:none;display:flex;align-items:center;margin-left:50px;font-size:26px;letter-spacing:.08em">為每一次呼吸，</span><div style="flex:none;width:220px;margin-left:50px"><img src="assets/81569231-7a8e-4f55-b7bc-8a53175d4988.jpg" alt="" style="width:100%;height:300px;object-fit:cover;display:block"></div><span style="flex:none;display:flex;align-items:center;margin-left:50px;font-size:26px;letter-spacing:.08em">為每一種心情。</span><div style="flex:none;width:300px;margin-left:50px"><img src="assets/6e742722-ffaf-4878-b8f1-0b08cfe0b736.jpg" alt="" style="width:100%;height:300px;object-fit:cover;display:block"></div><span style="flex:none;display:flex;align-items:center;margin-left:50px;font-size:26px;letter-spacing:.08em">( 8VRY )</span><div style="flex:none;width:280px;margin-left:50px"><img src="assets/1743528f-4163-4bae-a98c-3b8c91ee403d.jpg" alt="" style="width:100%;height:300px;object-fit:cover;display:block"></div></div>
-        <div style="display:flex;animation:loop_right 55s linear infinite"><div style="flex:none;width:226px;margin-left:50px"><img src="assets/f4810c35-3b32-4992-bb2f-5664a24291f7.jpg" alt="" style="width:100%;height:300px;object-fit:cover;display:block"></div><span style="flex:none;display:flex;align-items:center;margin-left:50px;font-size:26px;letter-spacing:.08em">為每一次呼吸，</span><div style="flex:none;width:220px;margin-left:50px"><img src="assets/81569231-7a8e-4f55-b7bc-8a53175d4988.jpg" alt="" style="width:100%;height:300px;object-fit:cover;display:block"></div><span style="flex:none;display:flex;align-items:center;margin-left:50px;font-size:26px;letter-spacing:.08em">為每一種心情。</span><div style="flex:none;width:300px;margin-left:50px"><img src="assets/6e742722-ffaf-4878-b8f1-0b08cfe0b736.jpg" alt="" style="width:100%;height:300px;object-fit:cover;display:block"></div><span style="flex:none;display:flex;align-items:center;margin-left:50px;font-size:26px;letter-spacing:.08em">( 8VRY )</span><div style="flex:none;width:280px;margin-left:50px"><img src="assets/1743528f-4163-4bae-a98c-3b8c91ee403d.jpg" alt="" style="width:100%;height:300px;object-fit:cover;display:block"></div></div>
+        <div style="display:flex;animation:loop_right 55s linear infinite"><div style="flex:none;width:226px;margin-left:50px"><img src="assets/01141443-a1a5-46da-92e2-82a1f2b30861.jpg" alt="" style="width:100%;height:300px;object-fit:cover;display:block"></div><span style="flex:none;display:flex;align-items:center;margin-left:50px;font-size:26px;letter-spacing:.08em">為每一次呼吸，</span><div style="flex:none;width:220px;margin-left:50px"><img src="assets/16bf8a8c-6aa9-4126-ba94-66584d2a0796.jpg" alt="" style="width:100%;height:300px;object-fit:cover;display:block"></div><span style="flex:none;display:flex;align-items:center;margin-left:50px;font-size:26px;letter-spacing:.08em">為每一種心情。</span><div style="flex:none;width:300px;margin-left:50px"><img src="assets/6e742722-ffaf-4878-b8f1-0b08cfe0b736.jpg" alt="" style="width:100%;height:300px;object-fit:cover;display:block"></div><span style="flex:none;display:flex;align-items:center;margin-left:50px;font-size:26px;letter-spacing:.08em">( 8VRY )</span><div style="flex:none;width:280px;margin-left:50px"><img src="assets/1743528f-4163-4bae-a98c-3b8c91ee403d.jpg" alt="" style="width:100%;height:300px;object-fit:cover;display:block"></div></div>
+        <div style="display:flex;animation:loop_right 55s linear infinite"><div style="flex:none;width:226px;margin-left:50px"><img src="assets/01141443-a1a5-46da-92e2-82a1f2b30861.jpg" alt="" style="width:100%;height:300px;object-fit:cover;display:block"></div><span style="flex:none;display:flex;align-items:center;margin-left:50px;font-size:26px;letter-spacing:.08em">為每一次呼吸，</span><div style="flex:none;width:220px;margin-left:50px"><img src="assets/16bf8a8c-6aa9-4126-ba94-66584d2a0796.jpg" alt="" style="width:100%;height:300px;object-fit:cover;display:block"></div><span style="flex:none;display:flex;align-items:center;margin-left:50px;font-size:26px;letter-spacing:.08em">為每一種心情。</span><div style="flex:none;width:300px;margin-left:50px"><img src="assets/6e742722-ffaf-4878-b8f1-0b08cfe0b736.jpg" alt="" style="width:100%;height:300px;object-fit:cover;display:block"></div><span style="flex:none;display:flex;align-items:center;margin-left:50px;font-size:26px;letter-spacing:.08em">( 8VRY )</span><div style="flex:none;width:280px;margin-left:50px"><img src="assets/1743528f-4163-4bae-a98c-3b8c91ee403d.jpg" alt="" style="width:100%;height:300px;object-fit:cover;display:block"></div></div>
       </div>
     </div>
     <div data-screen-label="Footer Main" style="background-color: #f0ebe0">
@@ -952,9 +951,9 @@ a[id^="faqtile"]{width:50%!important}
           </div>
         </nav>
         <div style="position:relative;width:120px;aspect-ratio:3/4">
-          <img id="frot0" src="assets/d7427195-927e-4312-8746-78eaefddedce.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:1;transition:opacity 1s">
-          <img id="frot1" src="assets/e1cb8fac-1710-4394-9b9e-aab16af860fc.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1s">
-          <img id="frot2" src="assets/24bc5c7e-094c-42ce-8264-be3b774f0db0.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1s">
+          <img id="frot0" src="assets/4785b3bf-b675-45c9-b1c0-2fcaab0ff88a.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:1;transition:opacity 1s">
+          <img id="frot1" src="assets/f4810c35-3b32-4992-bb2f-5664a24291f7.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1s">
+          <img id="frot2" src="assets/aa4224f8-c3a1-4f08-9a7b-8e1352962c56.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1s">
         </div>
       </div>
       <div style="width:87.5%;margin:auto;border-top:1px solid rgba(0,0,0,.25)">
@@ -1384,6 +1383,66 @@ document.addEventListener('DOMContentLoaded',()=>{ new Site().init(); });
           });
         }
 
+        /* ---------- Photo fade-in ---------- */
+        /* Opacity only, on purpose. A scaled image needs its parent clipped,
+           which is what cut the edge labels off the science infographic, and a
+           horizontal offset is what put a scrollbar on the page; opacity cannot
+           affect layout at all.
+           Skipped: the looping marquees (duplicated tracks in constant motion),
+           the hero (driven by its own intro timeline), the cycling footer
+           rotator, modal contents, and anything inside a [data-reveal] block —
+           those already fade in as a group, so a second pass would double up.
+           Logos and icons are filtered out by extension and size: "photo"
+           means the content imagery, not UI furniture. */
+        var photoSkip = ["#kv-fixed", ".ugc-track", "[data-screen-label='Mood Marquee']",
+                         ".ft-main", "#video-modal", "#spec-modal", "#faq-modal",
+                         "[data-reveal]"];
+        var photos = gsap.utils.toArray("img, video").filter(function (el) {
+          if (/\.svg$/i.test(el.getAttribute("src") || "")) return false;
+          for (var s = 0; s < photoSkip.length; s++) {
+            if (el.closest(photoSkip[s])) return false;
+          }
+          var r = el.getBoundingClientRect();
+          if (r.width < 80 || r.height < 80) return false;
+          /* Full-section backdrops must never fade. The science section has a
+             transparent background and pure white text, so those eight stacked
+             2118px layers are the only thing that text is legible against —
+             fading them would put white on cream. Anything taller than the
+             viewport, or effectively full-bleed, is scenery, not a photo. */
+          if (r.height > window.innerHeight) return false;
+          if (r.width > window.innerWidth * 0.92) return false;
+          return true;
+        });
+
+        if (photos.length) {
+          gsap.set(photos, { autoAlpha: 0 });
+          ScrollTrigger.batch(photos, {
+            start: "top 92%",
+            once: true,
+            onEnter: function (batch) {
+              gsap.to(batch, {
+                autoAlpha: 1, duration: 1.1, ease: "power2.out",
+                stagger: 0.09, overwrite: "auto",
+                /* opacity/visibility only — clearing transform here would wipe
+                   the scrubbed parallax tween that shares some of these nodes */
+                clearProps: "opacity,visibility"
+              });
+            }
+          });
+
+          /* An image that never reappears is far worse than one that never
+             animates, so force-show anything still hidden once the page has
+             settled (covers nodes whose trigger cannot resolve, e.g. inside a
+             clipped or transformed ancestor). */
+          gsap.delayedCall(3, function () {
+            photos.forEach(function (el) {
+              if (Number(gsap.getProperty(el, "opacity")) === 0) {
+                gsap.set(el, { autoAlpha: 1, clearProps: "opacity,visibility" });
+              }
+            });
+          });
+        }
+
         /* ---------- (4) Product cards: horizontal slide-in (desktop) ---------- */
         var cards = gsap.utils.toArray(".pcard");
         if (cards.length) {
@@ -1434,10 +1493,12 @@ document.addEventListener('DOMContentLoaded',()=>{ new Site().init(); });
             "[data-screen-label='Campaign'] img"
           ).forEach(function (el) { parallax(el, 6); });
 
-          /* large decorative philosophy / story imagery — gentle float */
+          /* Large decorative philosophy imagery — gentle float.
+             The Our Story science diagram is deliberately excluded: parallax
+             clips its parent to contain the scaled image, which would cut the
+             edge labels ("Thinking", "HIPPOCAMPUS") off the infographic. */
           gsap.utils.toArray(
-            "[data-screen-label='Philosophy'] > div:nth-child(2) > div:nth-child(1) img," +
-            "[data-screen-label='Our Story'] > div:nth-child(3) > div img"
+            "[data-screen-label='Philosophy'] > div:nth-child(2) > div:nth-child(1) img"
           ).forEach(function (el) { parallax(el, 4); });
         }
 
