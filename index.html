@@ -313,7 +313,7 @@ a[id^="faqtile"]{width:50%!important}
 .h2-big{font-family:'EB Garamond',"Yu Mincho","YuMincho","游明朝","Hiragino Mincho ProN","Noto Serif TC",serif;letter-spacing:.02em}
 .ep-num{font-family:'EB Garamond',"Yu Mincho","YuMincho","游明朝","Hiragino Mincho ProN","Noto Serif TC",serif;line-height:.75}
 [data-reveal]{opacity:0;transform:translateY(70px) scale(.98);filter:blur(6px);transition:opacity 1.1s cubic-bezier(.215,.61,.355,1),transform 1.1s cubic-bezier(.215,.61,.355,1),filter 1.1s cubic-bezier(.215,.61,.355,1);will-change:opacity,transform,filter}
-[data-reveal].in{opacity:1;transform:none;filter:none}
+[data-reveal].in{opacity:1;transform:none;filter:none;will-change:auto}
 @media (prefers-reduced-motion:reduce){[data-reveal]{opacity:1!important;transform:none!important;transition:none!important}}
 </style>
 <style>
@@ -378,7 +378,7 @@ a[id^="faqtile"]{width:50%!important}
       <div style="position:relative">
         <button id="cta-btn" style="display:inline-flex;align-items:center;gap:10px;padding:8px 20px;background:transparent;color:#fff;border:1px solid currentColor;border-radius:100px;font-family:inherit;font-size:11px;letter-spacing:.05em;white-space:nowrap;cursor:pointer;transition:background-color 80ms,color 80ms" class="hv4">
           <span>即將於 ( 嘖嘖 ) 登場</span>
-          <span id="cta-caret" style="display:inline-flex;align-items:center;transition:transform .3s cubic-bezier(.165,.84,.44,1)"><svg sc-camel-view-box="0 0 448 448" style="width:15px;height:15px;fill:currentColor;display:block"><path d="M235.5.5l4.64.85c110.81,7.82,199.3,96.66,206.54,207.52l.82,4.63v21l-.82,4.64c-7.34,110.82-95.79,199.62-206.53,207.55l-4.64.81h-23l-4.64-.84C97.83,438.87,9.62,351.18,1.38,241.17l-.88-4.67.44-24.65C7.13,97.49,99.21,6.33,213.02.96l22.48-.46ZM339.59,273.34c2.1.1,4.32-2.84,4.61-4.24l5.46-25.51c.18-.82-.54-3.44-1.34-3.53l-2.92-.34-94.85-4.36c-2.43-.11-5.2-.55-6.43-1.96-1.17-1.34-1.55-4.42-1.19-6.4l6.76-37.49c.68-3.79-2.33-6.97-6.19-7.19l-136.72-7.61c-2.19-.12-4.26,2.65-4.53,4.29l-3.62,21.63c-.22,1.32.34,4.19,1.14,5.09s3.04,1.61,4.81,1.73l99.12,6.6c3.86.26,7.01,3.49,6.23,7.55l-7.49,38.85c-.83,4.32,2.42,6.55,6.23,6.73l130.93,6.18v-.02Z"></path></svg><span id="cta-arrow" style="margin-left:8px;display:inline-flex;transition:transform .3s cubic-bezier(.165,.84,.44,1)">→</span></span>
+          <span id="cta-caret" style="display:inline-flex;align-items:center;transition:transform .3s cubic-bezier(.165,.84,.44,1)"><svg viewBox="0 0 448 448" style="width:15px;height:15px;fill:currentColor;display:block"><path d="M235.5.5l4.64.85c110.81,7.82,199.3,96.66,206.54,207.52l.82,4.63v21l-.82,4.64c-7.34,110.82-95.79,199.62-206.53,207.55l-4.64.81h-23l-4.64-.84C97.83,438.87,9.62,351.18,1.38,241.17l-.88-4.67.44-24.65C7.13,97.49,99.21,6.33,213.02.96l22.48-.46ZM339.59,273.34c2.1.1,4.32-2.84,4.61-4.24l5.46-25.51c.18-.82-.54-3.44-1.34-3.53l-2.92-.34-94.85-4.36c-2.43-.11-5.2-.55-6.43-1.96-1.17-1.34-1.55-4.42-1.19-6.4l6.76-37.49c.68-3.79-2.33-6.97-6.19-7.19l-136.72-7.61c-2.19-.12-4.26,2.65-4.53,4.29l-3.62,21.63c-.22,1.32.34,4.19,1.14,5.09s3.04,1.61,4.81,1.73l99.12,6.6c3.86.26,7.01,3.49,6.23,7.55l-7.49,38.85c-.83,4.32,2.42,6.55,6.23,6.73l130.93,6.18v-.02Z"></path></svg><span id="cta-arrow" style="margin-left:8px;display:inline-flex;transition:transform .3s cubic-bezier(.165,.84,.44,1)">→</span></span>
         </button>
         <div id="cta-panel" style="position:absolute;top:calc(100% + 10px);right:0;min-width:100%;background:#fff;color:#3c2a1c;border:1px solid #3c2a1c;border-radius:18px;overflow:hidden;opacity:0;transform:translateY(-8px);pointer-events:none;transition:opacity .3s,transform .3s cubic-bezier(.165,.84,.44,1);z-index:10">
           <a href="#" style="display:flex;justify-content:space-between;align-items:center;gap:20px;padding:10px 20px;font-size:11px;white-space:nowrap;transition:background-color 80ms,color 80ms" class="hv5"><span>前往嘖嘖集資頁</span><span>→</span></a>
@@ -415,7 +415,7 @@ a[id^="faqtile"]{width:50%!important}
 
 <!-- ===== CAMPAIGN (sticky backdrop) ===== -->
 <section id="p-campaign" data-screen-label="Campaign" style="display:flex;align-items:center;position:sticky;top:0;height:100vh;z-index:3">
-  <div style="position:absolute;top:0;left:0;width:100%;height:100%"><img src="assets/aa4224f8-c3a1-4f08-9a7b-8e1352962c56.jpg" alt="" style="width:100%;height:100%;object-fit:cover"><div style="position:absolute;inset:0;pointer-events:none;background-image:url(&quot;assets/79e406d8-7be0-4cbc-afc9-02d023e57362.svg&quot;);background-size:180px 180px;opacity:.3;mix-blend-mode:multiply;z-index:2"></div><div style="position:absolute;inset:0;pointer-events:none;opacity:.22;mix-blend-mode:overlay;background-image:url(&quot;data:image/svg+xml,&lt;svg xmlns=%27http://www.w3.org/2000/svg%27 width=%27140%27 height=%27140%27&gt;&lt;filter id=%27n%27&gt;&lt;feTurbulence type=%27fractalNoise%27 sc-camel-base-frequency=%270.9%27 sc-camel-num-octaves=%272%27 sc-camel-stitch-tiles=%27stitch%27/&gt;&lt;/filter&gt;&lt;rect width=%27100%25%27 height=%27100%25%27 filter=%27url(%23n)%27/&gt;&lt;/svg&gt;&quot;)"></div></div>
+  <div style="position:absolute;top:0;left:0;width:100%;height:100%"><img src="assets/aa4224f8-c3a1-4f08-9a7b-8e1352962c56.jpg" alt="" style="width:100%;height:100%;object-fit:cover"><div style="position:absolute;inset:0;pointer-events:none;background-image:url(&quot;assets/79e406d8-7be0-4cbc-afc9-02d023e57362.svg&quot;);background-size:180px 180px;opacity:.3;mix-blend-mode:multiply;z-index:2"></div><div style="position:absolute;inset:0;pointer-events:none;opacity:.22;mix-blend-mode:overlay;background-image:url(&quot;data:image/svg+xml,&lt;svg xmlns=%27http://www.w3.org/2000/svg%27 width=%27140%27 height=%27140%27&gt;&lt;filter id=%27n%27&gt;&lt;feTurbulence type=%27fractalNoise%27 baseFrequency=%270.9%27 numOctaves=%272%27 stitchTiles=%27stitch%27/&gt;&lt;/filter&gt;&lt;rect width=%27100%25%27 height=%27100%25%27 filter=%27url(%23n)%27/&gt;&lt;/svg&gt;&quot;)"></div></div>
   <div style="display:flex;justify-content:space-between;align-items:center;position:relative;width:100%;padding:0 6.25%;color:#fff">
     <p style="margin:0;font-size:20px;font-family:'EB Garamond'," yu="" mincho","yumincho","游明朝","hiragino="" mincho="" pron","noto="" serif="" tc",serif"="">Coming Soon</p>
     <p style="margin:0;font-size:12px;letter-spacing:.1em;line-height:1.5">即將於 ( 嘖嘖 ) 登場</p>
@@ -549,7 +549,7 @@ a[id^="faqtile"]{width:50%!important}
     </div>
 
     <!-- Product grid -->
-    <div data-reveal="" style="display:flex;flex-wrap:wrap;position:relative;border-top:1px solid #3c2a1c;border-bottom:1px solid #3c2a1c;z-index:20">
+    <div data-reveal="" style="display:flex;flex-wrap:wrap;position:relative;overflow:hidden;border-top:1px solid #3c2a1c;border-bottom:1px solid #3c2a1c;z-index:20">
       <div class="pcard" style="position:relative;width:25%;box-sizing:border-box;padding:70px 0;border-right:1px solid #3c2a1c"><div class="pcard-bg"><img src="assets/4619110c-eb2d-4233-832a-b3328984c422.jpg" alt="" style="width:100%;height:100%;object-fit:cover"></div>
         <p style="margin: 0; text-align: center; font-size: 18px; line-height: 1.33; font-family: EB Garamond">Flow Boost</p>
         <p style="margin: 8px 0 0; text-align: center; font-size: 14px; font-family: EB Garamond">no.1</p>
@@ -944,11 +944,11 @@ a[id^="faqtile"]{width:50%!important}
           <a href="#faq" style="font-size:12px">FAQ</a>
           <a href="mailto:8co.design@gmail.com" style="font-size:12px">Contact</a>
           <div style="display:flex;align-items:center;gap:20px;margin-top:28px">
-            <a href="mailto:8co.design@gmail.com" aria-label="Mail" title="Mail" style="display:flex"><svg width="20" height="20" sc-camel-view-box="0 0 24 24"><rect x="2" y="4.5" width="20" height="15" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"></rect><path d="M3 6.5l9 6.5 9-6.5" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg></a>
-            <a href="#" aria-label="LINE" title="LINE" style="display:flex"><svg width="20" height="20" sc-camel-view-box="0 0 24 24"><path d="M12 3.5C6.9 3.5 2.75 6.9 2.75 11c0 2.3 1.4 4.4 3.5 5.8-.1.6-.5 2-.6 2.4 0 0-.1.4.2.5.2.2.5 0 .5 0 .5-.2 2.5-1.5 3.4-2.1.7.1 1.5.2 2.25.2 5.1 0 9.25-3.4 9.25-7.3S17.1 3.5 12 3.5z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path></svg></a>
-            <a href="#" aria-label="Instagram" title="Instagram" style="display:flex"><svg width="20" height="20" sc-camel-view-box="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.5"></rect><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.5"></circle><circle cx="17.2" cy="6.8" r="1.3" fill="currentColor"></circle></svg></a>
-            <a href="#" aria-label="Facebook" title="Facebook" style="display:flex"><svg width="20" height="20" sc-camel-view-box="0 0 24 24"><path d="M17.5 2.75h-2.75a4.75 4.75 0 0 0-4.75 4.75v3H7v4h3v6.75h4V14.5h3l1-4h-4V7.5a1 1 0 0 1 1-1h2.5z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path></svg></a>
-            <a href="#" aria-label="Threads" title="Threads" style="display:flex"><svg width="20" height="20" sc-camel-view-box="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="4"></circle><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8"></path></svg></a>
+            <a href="mailto:8co.design@gmail.com" aria-label="Mail" title="Mail" style="display:flex"><svg width="20" height="20" viewBox="0 0 24 24"><rect x="2" y="4.5" width="20" height="15" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"></rect><path d="M3 6.5l9 6.5 9-6.5" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg></a>
+            <a href="https://line.me/R/ti/p/@134uyixs" target="_blank" rel="noopener noreferrer" aria-label="LINE" title="LINE" style="display:flex"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M12 3.5C6.9 3.5 2.75 6.9 2.75 11c0 2.3 1.4 4.4 3.5 5.8-.1.6-.5 2-.6 2.4 0 0-.1.4.2.5.2.2.5 0 .5 0 .5-.2 2.5-1.5 3.4-2.1.7.1 1.5.2 2.25.2 5.1 0 9.25-3.4 9.25-7.3S17.1 3.5 12 3.5z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path></svg></a>
+            <a href="https://www.instagram.com/8vry.official/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram" style="display:flex"><svg width="20" height="20" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.5"></rect><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.5"></circle><circle cx="17.2" cy="6.8" r="1.3" fill="currentColor"></circle></svg></a>
+            <a href="https://www.facebook.com/8vry.official" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook" style="display:flex"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M17.5 2.75h-2.75a4.75 4.75 0 0 0-4.75 4.75v3H7v4h3v6.75h4V14.5h3l1-4h-4V7.5a1 1 0 0 1 1-1h2.5z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path></svg></a>
+            <a href="https://www.threads.com/@8vry.official" target="_blank" rel="noopener noreferrer" aria-label="Threads" title="Threads" style="display:flex"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="4"></circle><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8"></path></svg></a>
           </div>
         </nav>
         <div style="position:relative;width:120px;aspect-ratio:3/4">
@@ -1262,6 +1262,46 @@ class Site {
 document.addEventListener('DOMContentLoaded',()=>{ new Site().init(); });
 
 </script>
+<script>
+/* Off-screen marquees keep compositing forever: the UGC tracks alone translate
+   8 playing videos. Pause each looping track while its section is out of view.
+   Independent of GSAP on purpose — it must still run if the CDN-less vendor
+   scripts below fail. Only ever writes "paused" inline and clears the property
+   to resume, so the CSS hover-to-pause rule keeps working. */
+(function () {
+  if (!("IntersectionObserver" in window)) return;
+
+  var attach = function () {
+    var tracks = [].filter.call(document.querySelectorAll("*"), function (el) {
+      return getComputedStyle(el).animationIterationCount === "infinite";
+    });
+    if (!tracks.length) return;
+
+    var groups = new Map();
+    tracks.forEach(function (el) {
+      var root = el.closest("[data-screen-label]") || el.parentElement;
+      if (!root) return;
+      if (!groups.has(root)) groups.set(root, []);
+      groups.get(root).push(el);
+    });
+
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        (groups.get(e.target) || []).forEach(function (el) {
+          if (e.isIntersecting) el.style.removeProperty("animation-play-state");
+          else el.style.animationPlayState = "paused";
+        });
+      });
+    }, { rootMargin: "200px 0px" });
+
+    groups.forEach(function (_, root) { io.observe(root); });
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", attach);
+  } else { attach(); }
+})();
+</script>
 <script src="assets/vendor/gsap.min.js"></script>
 <script src="assets/vendor/ScrollTrigger.min.js"></script>
 <script>
@@ -1271,6 +1311,10 @@ document.addEventListener('DOMContentLoaded',()=>{ new Site().init(); });
 (function () {
   if (!window.gsap || !window.ScrollTrigger) return;
   gsap.registerPlugin(ScrollTrigger);
+
+  /* mobile browsers resize the viewport when the address bar hides/shows —
+     without this every such change forces a refresh and makes scrubs jump */
+  ScrollTrigger.config({ ignoreMobileResize: true });
 
   var start = function () {
     var mm = gsap.matchMedia();
@@ -1282,6 +1326,10 @@ document.addEventListener('DOMContentLoaded',()=>{ new Site().init(); });
         /* reduced-motion: create no animations at all (nothing gets hidden) */
         if (!ctx.conditions.motion) return function () {};
         var isDesktop = ctx.conditions.desktop;
+
+        /* clearProps on finish: an entrance must not leave inline transform /
+           visibility / opacity behind, or it overrides the CSS hover styles */
+        var REVEAL_CLEAR = "transform,visibility,opacity,translate,rotate,scale";
 
         /* ---------- (2) Hero intro sequence ---------- */
         var heroBits = [
@@ -1297,33 +1345,41 @@ document.addEventListener('DOMContentLoaded',()=>{ new Site().init(); });
           var htl = gsap.timeline({ delay: 2.0, defaults: { ease: "power3.out" } });
           heroBits.forEach(function (nodes, i) {
             htl.from(nodes, { y: 18, autoAlpha: 0, duration: 0.9,
-              stagger: 0.08 }, i === 0 ? 0 : "-=0.72");
+              stagger: 0.08, clearProps: REVEAL_CLEAR }, i === 0 ? 0 : "-=0.72");
           });
         }
 
         /* ---------- (1) Scroll reveals ---------- */
-        var revealSel = [
+        var revealEls = gsap.utils.toArray([
           "[data-screen-label] h2",
           ".phi-row > p",
           ".ep-row > div > p",
           ".story-row > div > p",
           ".bv-row + div p"
-        ];
-        revealSel.forEach(function (sel) {
-          gsap.utils.toArray(sel).forEach(function (el) {
-            gsap.from(el, {
-              y: 30, autoAlpha: 0, duration: 1, ease: "power2.out",
-              scrollTrigger: { trigger: el, start: "top 85%", once: true }
-            });
+        ].join(","));
+
+        if (revealEls.length) {
+          gsap.set(revealEls, { y: 30, autoAlpha: 0 });
+          /* one batched trigger set: elements that scroll in together animate
+             together with a stagger, instead of each firing on its own */
+          ScrollTrigger.batch(revealEls, {
+            start: "top 85%",
+            once: true,
+            onEnter: function (batch) {
+              gsap.to(batch, {
+                y: 0, autoAlpha: 1, duration: 1, ease: "power2.out",
+                stagger: 0.12, overwrite: true, clearProps: REVEAL_CLEAR
+              });
+            }
           });
-        });
+        }
 
         /* FAQ tiles — staggered */
         var faq = gsap.utils.toArray("a[id^='faqtile']");
         if (faq.length) {
           gsap.from(faq, {
             y: 34, autoAlpha: 0, duration: 0.8, ease: "power2.out",
-            stagger: 0.08,
+            stagger: 0.08, clearProps: REVEAL_CLEAR,
             scrollTrigger: { trigger: faq[0], start: "top 85%", once: true }
           });
         }
@@ -1334,44 +1390,68 @@ document.addEventListener('DOMContentLoaded',()=>{ new Site().init(); });
           if (isDesktop) {
             gsap.from(cards, {
               xPercent: 8, autoAlpha: 0, duration: 0.9, ease: "power3.out",
-              stagger: 0.12,
+              stagger: 0.12, clearProps: REVEAL_CLEAR,
               scrollTrigger: { trigger: cards[0], start: "top 80%", once: true }
             });
           } else {
             gsap.from(cards, {
               y: 30, autoAlpha: 0, duration: 0.8, ease: "power2.out", stagger: 0.1,
+              clearProps: REVEAL_CLEAR,
               scrollTrigger: { trigger: cards[0], start: "top 85%", once: true }
             });
           }
         }
 
-        /* ---------- (3) Parallax — desktop only, images inside overflow-hidden covers ---------- */
+        /* ---------- (3) Parallax — desktop only ---------- */
         if (isDesktop) {
-          gsap.utils.toArray(".rec-img img, .bv-row video").forEach(function (img) {
-            gsap.fromTo(img, { yPercent: -6 }, {
-              yPercent: 6, ease: "none",
-              scrollTrigger: { trigger: img.closest("section, div"), start: "top bottom", end: "bottom top", scrub: true }
+          /* Move the media inside a frame that clips it, and oversize it just
+             enough that the travel never exposes an edge. Without the clip +
+             scale the image only drifts out of alignment with its box, which
+             reads as a layout bug rather than depth. */
+          var parallax = function (el, amount) {
+            var frame = el.parentElement;
+            if (!frame) return;
+            gsap.set(frame, { overflow: "hidden" });
+            gsap.set(el, {
+              scale: 1 + (amount * 2.4) / 100,
+              transformOrigin: "center center",
+              force3D: true
             });
-          });
+            gsap.fromTo(el, { yPercent: -amount }, {
+              yPercent: amount, ease: "none",
+              scrollTrigger: {
+                trigger: frame,
+                start: "top bottom", end: "bottom top",
+                scrub: 0.6,              /* slight lag reads smoother than 1:1 */
+                invalidateOnRefresh: true
+              }
+            });
+          };
+
+          /* full-bleed feature media */
+          gsap.utils.toArray(
+            ".bv-row video," +
+            "[data-screen-label='Campaign'] img"
+          ).forEach(function (el) { parallax(el, 6); });
+
           /* large decorative philosophy / story imagery — gentle float */
           gsap.utils.toArray(
             "[data-screen-label='Philosophy'] > div:nth-child(2) > div:nth-child(1) img," +
             "[data-screen-label='Our Story'] > div:nth-child(3) > div img"
-          ).forEach(function (img) {
-            gsap.fromTo(img, { yPercent: -4 }, {
-              yPercent: 4, ease: "none",
-              scrollTrigger: { trigger: img, start: "top bottom", end: "bottom top", scrub: true }
-            });
-          });
+          ).forEach(function (el) { parallax(el, 4); });
         }
 
-        ScrollTrigger.refresh();
         return function () {}; /* matchMedia auto-reverts on cleanup */
       }
     );
 
-    /* keep triggers correct once fonts/images settle */
-    window.addEventListener("load", function () { ScrollTrigger.refresh(); });
+    /* Trigger positions are measured before images and webfonts have sized
+       themselves, so recompute once each settles. `load` has already fired if
+       we were started late, hence the readyState check. */
+    var refresh = function () { ScrollTrigger.refresh(); };
+    if (document.readyState === "complete") refresh();
+    else window.addEventListener("load", refresh);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(refresh);
   };
 
   if (document.readyState === "loading") {
