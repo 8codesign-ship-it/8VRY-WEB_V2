@@ -221,6 +221,15 @@ img,video{display:block}
 @keyframes badge_rotate{0%{transform:rotate(0)}18%,to{transform:rotate(360deg)}}
 .pcard{transition:color .6s}
 .pcard:hover{color:#fff}
+/* Every image carries width/height so the browser can reserve its box before the
+   file arrives. Those are presentational attributes with zero specificity, so
+   without this rule they are used as literal pixel sizes on whichever axis the
+   CSS leaves unset — an image styled only "width:100%" was being forced to the
+   attribute's height and stretched. Handing both axes to the stylesheet lets the
+   attributes do only what they are for: modern engines derive an aspect-ratio
+   from them, which still reserves the space. Inline styles outrank this, so
+   width:100% / height:100% pairs and object-fit crops are untouched. */
+img{width:auto;height:auto}
 .pcard .pcard-bg{position:absolute;inset:0;z-index:-1;opacity:0;transition:opacity .6s}
 .pcard:hover .pcard-bg{opacity:1}
 .pcard-bg::after{content:'';position:absolute;inset:0;pointer-events:none}
